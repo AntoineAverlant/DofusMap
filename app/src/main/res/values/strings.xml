@@ -1,0 +1,269 @@
+<resources>
+    <string name="app_name">MapRetro</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="zone_art">Zone artique (L\'île de Nowel)</string>
+
+    <string name="empty"/>
+
+    <string name="bonta">Bonta</string>
+
+    <string name="brakmar">Brâkmar</string>
+
+    <string name="astrub_cite">Astrub (Cité d\'Astrub)</string>
+    <string name="astrub_foret">Astrub (Forêt d\'Astrub)</string>
+    <string name="astrub_champ">Astrub (Champs d\'Astrub)</string>
+    <string name="astrub_tofus">Astrub (Le coin des Tofus)</string>
+    <string name="astrub_calanques">Astrub (Calanques d\'Astrub)</string>
+    <string name="astrub_bouftou">Astrub (Elevage de Bouftous du Chateau d\'Amakna)</string>
+
+    <string name="pandala">Pandala Neutre</string>
+    <string name="pandala_neutre_foret">Pandala Neutre (Forêt de Pandala)</string>
+    <string name="pandala_neutre">Pandala Neutre (Village de Pandala)</string>
+    <string name="pandala_air">Pandala Air (Village d\'Aerdala)</string>
+    <string name="pandala_terre">Pandala Terre (Village de Terrdala)</string>
+    <string name="pandala_eau">Pandala Eau (Village de Akwadala)</string>
+    <string name="pandala_feu">Pandala Feu (Village de Feudala)</string>
+    <string name="pandala_eau_bordure">Pandala Eau (Bordures d\'Akwadala)</string>
+    <string name="pandala_air_bordure">Pandala Air (Bordure D\'Aerdala)</string>
+    <string name="pandala_terre_bordure">Pandala Terre (Bordure Terrdala)</string>
+    <string name="pandala_feu_bordure">Pandala Feu (Bordure de Feudala)</string>
+
+    <string name="sidimote">Lande de Sidimote</string>
+    <string name="dopeuls">Territoire des Dopeuls</string>
+    <string name="brigandins">Village des Brigandins</string>
+    <string name="foire">Foire du Trool</string>
+    <string name="village_bwork">Village des Bworks</string>
+
+    <string name="moon_plage">L\'île de Moon (La plage de Moon)</string>
+    <string name="moon_jungle_prof">L\'île de Moon (Jungle profonde de Moon)</string>
+
+    <string name="wabbits_ile">L\'île des Wabbits (Île des Wabbits)</string>
+    <string name="wabbits_chateau">L\'île des Wabbits (Île du chateau des Wabbits)</string>
+
+    <string name="amakna_foret">Amakna (La forêt d\'Amakna)</string>
+    <string name="amakna_milli">Amakna (La Millifutaie)</string>
+    <string name="amakna_scara">Amakna (Plaine des Scarafeuilles)</string>
+    <string name="amakna_champ">Amakna (Le champs des Ingalsses)</string>
+    <string name="amakna_village">Amakna (Le village)</string>
+    <string name="amakna_bandit">Amakna (Territoire des Bandits)</string>
+    <string name="amakna_bord_foret">Amakna (Bord de la forêt maléfique)</string>
+    <string name="amakna_montagne">Amakna (La montage des Craqueleurs)</string>
+    <string name="amakna_oree">Amakna (Orée de la Millifutaie)</string>
+    <string name="amakna_kawaii">Amakna (Rivière Kawaii)</string>
+    <string name="amakna_chateau">Amakna (Le château d\'Amakna)</string>
+    <string name="amakna_porte_sufokia">Amakna (Porte de Sufokia)</string>
+    <string name="amakna_dragoeufs">Amakna (La presqu\'île des Dragoeufs)</string>
+    <string name="amakna_porcos">Amakna (Territoire des Porcos)</string>
+    <string name="amakna_cimetiere">Amakna (Le cimetière)</string>
+    <string name="amakna_clairiere">Amakna (Clairière de Brouce Boulgour)</string>
+    <string name="amakna_madrestam">Amakna (Port de Madrestam)</string>
+    <string name="amakna_campagne">Amakna (La campagne)</string>
+    <string name="amakna_village_drago">Amakna (Village des Dragoeufs)</string>
+    <string name="amakna_penin">Amakna (La péninsule des Gelées)</string>
+
+    <string name="bateau_minotoror">Bateau vers l\'île du Minotoror</string>
+    <string name="bateau_wabbits">Bateau vers l\'île des Wabbits</string>
+
+    <string name="sufokia">Sufokia</string>
+
+    <string name="cania">Plaine de Cania</string>
+    <string name="cania_massif">Plaine de Cania (Massif de Cania)</string>
+    <string name="cania_corbac">Plaine de Cania (Pénates du Corbac)</string>
+    <string name="cania_rocheuse">Plaine de Cania (Plaines Rocheuse)</string>
+    <string name="cania_baie">Plaine de Cania (Baie de Cania)</string>
+
+    <string name="oto_village">Île d\'Otomaï (Le village côtier)</string>
+    <string name="oto_plage">Ile d\'Otomaï (Plage de Corail)</string>
+    <string name="oto_tourbiere">Ile d\'Otomaï (Tourbière sans fond)</string>
+    <string name="oto_plaines">Ile d\'Otomaï (Plaines herbeuses)</string>
+    <string name="oto_jungle">Ile d\'Otomaï (Jungle obscure)</string>
+    <string name="oto_canopee">Ile d\'Otomaï (Village de la Canopée)</string>
+    <string name="oto_tourbiere_nause">Ile d\'Otomaï (Tourbière nauséabonde)</string>
+    <string name="oto_naufrage">L\'île d\'Otomaï (Ile des naufragés)</string>
+
+    <string name="koalak_village">Montagne des Koalaks (Village des Eleveurs)</string>
+    <string name="koalak_vallee">Montagne des Koalak (Vallée de la Morh\'Kitu)</string>
+    <string name="koalak_marecages">Montagne des Koalak (Marécages nauséabond)</string>
+    <string name="koalak_canvon">Motagne des Koalaks (Canvon sauvage)</string>
+    <string name="koalak_cimetiere">Montagne des Koalaks (Cimetière primitif)</string>
+
+    <string name="arene">Arène</string>
+    <string name="zaap">Zaap</string>
+    <string name="banque">Banque</string>
+    <string name="bibliotheque">Bibliothèque</string>
+    <string name="canon">Canon pour l\'île de Moon</string>
+    <string name="chanil">Chanil</string>
+    <string name="dojo">Dojo</string>
+    <string name="eglise">Eglise</string>
+    <string name="egout">Egout</string>
+    <string name="enclos">Enclos public</string>
+    <string name="guildes">Temples des guildes</string>
+    <string name="hdm">Hôtel des métiers</string>
+    <string name="kanojedo">Kanojedo</string>
+    <string name="milice">Milice</string>
+    <string name="place_marchande">Place Marchande</string>
+    <string name="tour">Tour des ordres</string>
+    <string name="phenix">Phénix</string>
+    <string name="tranpo_brig">Transporteur Brigandin</string>
+
+
+    <string name="hdv_fee">Hôtel de vente des Fées d\'artifice</string>
+    <string name="hdv_parch">Hôtel de vente des Parchemins liés</string>
+    <string name="hdv_anim">Hôtel de vente des Animaux</string>
+    <string name="hdv_doc">Hôtel de vente des Documents</string>
+    <string name="hdv_res">Hôtel de vente des Ressources</string>
+    <string name="hdv_ames">Hôtel des ventes d\'Âmes</string>
+    <string name="hdv_bouch_chass">Hôtel de vente des Bouchers et des Chasseurs</string>
+    <string name="hdv_chass">Hôtel de vente des Chasseurs</string>
+    <string name="hdv_bouch">Hôtel de vente des Bouchers</string>
+    <string name="hdv_bijou">Hôtel de vente des Bijoutiers</string>
+    <string name="hdv_boulanger">Hôtel de vente des Boulangers</string>
+    <string name="hdv_poiss_pech">Hôtel de vente des Poissoniers et des Pêcheurs</string>
+    <string name="hdv_poiss">Hôtel de vente des Poissoniers</string>
+    <string name="hdv_pech">Hôtel de vente des Pêcheurs</string>
+    <string name="hdv_min">Hôtel de vente des Mineurs</string>
+    <string name="hdv_alch">Hôtel de vente des Alchimistes</string>
+    <string name="hdv_forge">Hôtel de vente des Forgerons</string>
+    <string name="hdv_sculpteur">Hôtel de vente des Sculpteurs</string>
+    <string name="hdv_cordo">Hôtel de vente des Cordonniers</string>
+    <string name="hdv_tailleur">Hôtel de vente des Tailleurs</string>
+    <string name="hdv_paysan">Hôtel de vente des Paysans</string>
+    <string name="hdv_buch">Hôtel de vente des Bucherons</string>
+    <string name="hdv_bou">Hôtel de vente des Boucliers</string>
+
+
+    <string name="bouftou">Donjon des Bouftou</string>
+    <string name="tainela">Tainéla (Le berceau)</string>
+    <string name="champs">Donjon des champs</string>
+    <string name="forgeron">Donjon Forgeron</string>
+    <string name="larve">Donjon Larve</string>
+    <string name="squelette">Donjon Squelette</string>
+    <string name="bulbes">Donjon Bulbes</string>
+    <string name="pandikaze">Donjon Pandikaze</string>
+    <string name="ktsoune">Donjon Kitsoune</string>
+    <string name="bwork">Donjon Bwork</string>
+    <string name="tofus">Donjon Tofus et du Tofus Royal</string>
+    <string name="skeunk">Repere de Skeunk</string>
+    <string name="bworker">Donjon Bworker</string>
+    <string name="craqueleurs">Donjon Craqueleurs</string>
+    <string name="familiers">Sanctuaire des familiers</string>
+    <string name="firefoux">Donjon Firefoux</string>
+    <string name="koulosse">Donjon Koulosse</string>
+    <string name="canides">Donjon Canidés</string>
+    <string name="moon">Donjon de Moon</string>
+    <string name="scara">Donjon Scarafeuille</string>
+    <string name="abraknyde">Donjon des Abraknydes et du Chêne Mou</string>
+    <string name="abraknyde_foret">Forêt des Abraknydes</string>
+    <string name="cochon">Antre du Dragon Cochon</string>
+    <string name="maitre_corbac">Donjon du Maitre Corbac</string>
+    <string name="dragoeufs">Sanctuaires des Dragoeufs</string>
+    <string name="minotoror">Labyrinthe du Minotoror et du Minotot</string>
+    <string name="ile_minotoror">L\'île du Minotoror</string>
+    <string name="nowel">Donjon de Nowel</string>
+    <string name="rat_amakna">Donjon des rats du chateau d\'Amakna</string>
+    <string name="rat_brakmar">Donjon des rats de Brâkmar</string>
+    <string name="rat_bonta">Donjon des rats de Bonta</string>
+    <string name="wabbits">Donjon des Wabbit</string>
+    <string name="ensable">Donjon ensablé</string>
+    <string name="fungus">Donjon Fungus</string>
+    <string name="blops">Donjon des Blops</string>
+    <string name="grotte_hesque">Grotte Hesque</string>
+    <string name="arche_oto">Arche d\'Otomaï</string>
+    <string name="goulet_rasboul">Goulet du Rasboul</string>
+    <string name="kralamoure">Antre du Kralamoure Géant</string>
+    <string name="kimbo">Canopée du Kimbo</string>
+    <string name="tynril">Laboratoire du Tynril</string>
+
+
+    <string name="tav_panda">Taverne du Pandawa Ivre</string>
+    <string name="tav_bagru">Taverne de la Bagrutte</string>
+    <string name="tav_chop">Taverne de la Chopenbois</string>
+    <string name="tav_fera">Taverne du Ferayeur</string>
+    <string name="tav_alak">Taverne Alakarte</string>
+    <string name="tav_feub">Taverne du Feubuk</string>
+    <string name="tav_pin">Taverne du Pinchaut</string>
+    <string name="tav_tab">Taverne de la Tabasse</string>
+    <string name="tav">Taverne</string>
+    <string name="tav_rip">Taverne du Ripate</string>
+    <string name="tav_alt">Taverne Altomond</string>
+    <string name="tav_bwork">Taverne du Bwork</string>
+    <string name="tav_djaul">Taverne de Djaul</string>
+    <string name="tav_cha">Taverne du Chabrulé</string>
+    <string name="tav_mis">Taverne de la Misère</string>
+
+
+    <string name="emote_mwouah">Faire un bisous</string>
+    <string name="emote_applau">Applaudir</string>
+    <string name="emote_peur">Avoir peur</string>
+    <string name="emote_signe">Faire signe</string>
+    <string name="emote_arme">Montrer son arme</string>
+    <string name="emote_peter">Peter</string>
+    <string name="emote_colere">Se mettre en colère</string>
+    <string name="shifumi">Pierre feuille ciseau</string>
+    <string name="emote_bras">Croiser les bras</string>
+    <string name="emote_doigt">Pointer du doigt</string>
+
+
+    <string name="mine_astrub">Mine d\'Astrub</string>
+    <string name="mine_village_amakna">Mine du village d\'Amakna</string>
+    <string name="mine_craque">Mine du coin des craqueleurs</string>
+    <string name="mine_montage_craque">Mine de la montagne des craqueleurs</string>
+    <string name="mine_sadi">Mine du temple Sadida</string>
+    <string name="mine_foret_amakna">Mine de la fôret d\'Amakna</string>
+    <string name="mine_bellus">Mine de Bellus Sel</string>
+    <string name="mine_mulou">Mine du Mulou</string>
+    <string name="mine_porcos">Mine des porcos</string>
+    <string name="mine_sidi">Mine de Sidimote</string>
+    <string name="mine_brak">Mine de Brâkmar</string>
+    <string name="mine_bord_brak">Mine de bordure de Brâkmar</string>
+
+
+    <string name="statue_panda">Statue Pandawa</string>
+    <string name="statue_enu">Statue Enutrof</string>
+    <string name="statue_sram">Statue Sram</string>
+    <string name="statue_eni">Statue Eniripsa</string>
+    <string name="statue_cra">Statue Crâ</string>
+    <string name="statue_xel">Statue Xélor</string>
+    <string name="statue_sadi">Statue Sadida</string>
+    <string name="statue_iop">Statue Iop</string>
+    <string name="statue_osa">Statue Osamodas</string>
+    <string name="statue_sacri">Statue Sacrieur</string>
+    <string name="statue_feca">Statue Féca</string>
+    <string name="statue_eca">Statue Ecaflip</string>
+
+
+    <string name="temple_enu">Temple Enutrof</string>
+    <string name="temple_sram">Temple Sram</string>
+    <string name="temple_eni">Temple Eniripsa</string>
+    <string name="temple_cra">Temple Crâ</string>
+    <string name="temple_xel">Temple Xélor</string>
+    <string name="temple_sadi">Temple Sadida</string>
+    <string name="temple_iop">Temple Iop</string>
+    <string name="temple_osa">Temple Osamodas</string>
+    <string name="temple_sacri">Temple Sacrieur</string>
+    <string name="temple_feca">Temple Féca</string>
+    <string name="temple_eca">Temple Ecaflip</string>
+    <string name="temple_panda">Temple Pandawa</string>
+    <string name="atelier_fee">Atelier des Fées d\'artifice</string>
+    <string name="atelier_brico">Atelier des Bricoleurs</string>
+    <string name="atelier_fm">Atelier des Forgemages</string>
+    <string name="atelier_bouch">Atelier des Bouchers</string>
+    <string name="atelier_chass">Atelier des Chasseurs</string>
+    <string name="atelier_bouch_chass">Atelier des Bouchers et Chasseurs</string>
+    <string name="atelier_bij">Atelier des Bijoutiers</string>
+    <string name="atelier_boulanger">Atelier des Boulangers</string>
+    <string name="atelier_poiss_pech">Atelier des Poissoniers et des Pêcheurs</string>
+    <string name="atelier_pech">Atelier des Pêcheurs</string>
+    <string name="atelier_mineur">Atelier des Mineurs</string>
+    <string name="atelier_alchi">Atelier des Alchimistes</string>
+    <string name="atelier_forge">Atelier des Forgerons</string>
+    <string name="atelier_scult">Atelier des Sculpteurs</string>
+    <string name="atelier_cordo">Atelier des Cordonniers</string>
+    <string name="atelier_tailleur">Atelier des Tailleurs</string>
+    <string name="atelier_paysan">Atelier des Paysans</string>
+    <string name="atelier_buch">Atelier des Bucherons</string>
+    <string name="atelier_bou">Atelier des Boucliers</string>
+
+
+</resources>
