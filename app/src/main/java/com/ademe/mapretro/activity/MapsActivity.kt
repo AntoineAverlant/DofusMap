@@ -11,6 +11,18 @@ import com.ademe.mapretro.utils.map.ListMapMarker
 import com.ademe.mapretro.utils.map.LocalTileProvider
 import com.ademe.mapretro.utils.map.MarkerMapType
 import com.ademe.mapretro.utils.marker.*
+import com.ademe.mapretro.utils.resource.abra.resourceAbra
+import com.ademe.mapretro.utils.resource.astrub.*
+import com.ademe.mapretro.utils.resource.brakmar.resourceBrakmar
+import com.ademe.mapretro.utils.resource.koalak.resourceKoalak
+import com.ademe.mapretro.utils.resource.nowell.resourceNowell
+import com.ademe.mapretro.utils.resource.pandala.resourcePandalaAir
+import com.ademe.mapretro.utils.resource.pandala.resourcePandalaEau
+import com.ademe.mapretro.utils.resource.pandala.resourcePandalaFeu
+import com.ademe.mapretro.utils.resource.pandala.resourcePandalaTerre
+import com.ademe.mapretro.utils.resource.sidimote.resourceSidimote
+import com.ademe.mapretro.utils.resource.tainela.resourceTainela
+import com.ademe.mapretro.utils.resource.wabbit.resourceWabbits
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -30,11 +42,32 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     // lists marker
     private val listMapMarker = ListMapMarker()
 
+    private val list = concatenate(
+        resourceAbra,
+        resourceAstrubChamp,
+        resourceAstrubCite,
+        resourceAstrubContour,
+        resourceAstrubForet,
+        resourceAstrubMine,
+        resourceAstrubRepos,
+        resourceKoalak,
+        resourceBrakmar,
+        resourcePandalaAir,
+        resourcePandalaEau,
+        resourcePandalaFeu,
+        resourcePandalaTerre,
+        resourceNowell,
+        resourceTainela,
+        resourceSidimote,
+        resourceWabbits
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
         vm = ViewModelProvider(this).get<MapActivityViewModel>(
-            MapActivityViewModel::class.java)
+            MapActivityViewModel::class.java
+        )
         (supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment).getMapAsync(this)
 
         menuSelection.init(
@@ -63,15 +96,29 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             setLatLngBoundsForCameraTarget(LatLngBounds(LatLng(-25.0, -144.0), LatLng(90.0, 90.0)))
             setMaxZoomPreference(5F)
             setMinZoomPreference(0F)
+
             //animateCamera(CameraUpdateFactory.zoomTo(4.5F), 2000, null)
+
+            setOnMarkerClickListener {
+                val markerRes = listMapMarker.mapMarkerRes[it]
+                markerRes?.let {
+                    infoMarker.showInfo(markerRes)
+                } ?:  infoMarker.hide()
+                false
+            }
+            setOnMapClickListener {
+                infoMarker.hide()
+            }
         }
 
         tiles =
-            mMap.addTileOverlay(TileOverlayOptions().tileProvider(
-                LocalTileProvider(
-                    resources.assets
+            mMap.addTileOverlay(
+                TileOverlayOptions().tileProvider(
+                    LocalTileProvider(
+                        resources.assets
+                    )
                 )
-            ))
+            )
         tiles.fadeIn = true
 
         Handler().postDelayed({
@@ -87,12 +134,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     loader.visibility = View.GONE
                 }, 50)
                 vm.setMapReady(false)
+
+                // TODO
+                addListMarkerRes(list)
             }
         })
 
         vm.markerDonjonEnabled.observe(this, Observer { isMarkerEnabled ->
             if (isMarkerEnabled) {
-                 addListMarker(markerDonjons, MarkerMapType.DONJONS)
+                addListMarker(markerDonjons, MarkerMapType.DONJONS)
             } else {
                 listMapMarker.clearListMarker(MarkerMapType.DONJONS)
             }
@@ -141,6 +191,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 listMapMarker.clearListMarker(MarkerMapType.EMOTE)
             }
         })
+    }
+
+    private fun addListMarkerRes(markerList: List<MarkerRes>) {
+        markerList.forEach { item ->
+            listMapMarker.addResMarker(item, mMap.addMarker(item.getMarkerOptions(this)))
+        }
     }
 
     private fun addListMarker(markerList: List<List<Marker>>, type: MarkerMapType) {

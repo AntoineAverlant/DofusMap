@@ -1,5 +1,7 @@
 package com.ademe.mapretro.utils.map
 
+import com.ademe.mapretro.utils.marker.MarkerRes
+import com.ademe.mapretro.utils.marker.MarkerTypeRes
 import com.google.android.gms.maps.model.Marker
 
 class ListMapMarker {
@@ -17,6 +19,13 @@ class ListMapMarker {
         mutableListOf()
     private val listMarkerEmote: MutableList<Marker> =
         mutableListOf()
+
+    val mapMarkerRes: HashMap<Marker, MarkerRes> =
+        hashMapOf()
+
+    fun addResMarker(markerRes: MarkerRes, marker: Marker) {
+        mapMarkerRes[marker] = markerRes
+    }
 
     fun addMapMarker(type: MarkerMapType, marker: Marker) {
         when (type) {

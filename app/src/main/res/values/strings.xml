@@ -9,13 +9,17 @@
     <string name="bonta">Bonta</string>
 
     <string name="brakmar">Brâkmar</string>
+    <string name="brakmar_bordure">Brâkmar (Bordure de Brâkmar)</string>
 
     <string name="astrub_cite">Astrub (Cité d\'Astrub)</string>
     <string name="astrub_foret">Astrub (Forêt d\'Astrub)</string>
+    <string name="astrub_mine">Astrub (Exploitation mininière d\'Astrub)</string>
+    <string name="astrub_contour">Astrub (Contour d\'Astrub)</string>
     <string name="astrub_champ">Astrub (Champs d\'Astrub)</string>
     <string name="astrub_tofus">Astrub (Le coin des Tofus)</string>
     <string name="astrub_calanques">Astrub (Calanques d\'Astrub)</string>
     <string name="astrub_bouftou">Astrub (Elevage de Bouftous du Chateau d\'Amakna)</string>
+    <string name="astrub_repos">Le Champ du Repos (Le champ du repos)</string>
 
     <string name="pandala">Pandala Neutre</string>
     <string name="pandala_neutre_foret">Pandala Neutre (Forêt de Pandala)</string>
@@ -34,12 +38,16 @@
     <string name="brigandins">Village des Brigandins</string>
     <string name="foire">Foire du Trool</string>
     <string name="village_bwork">Village des Bworks</string>
+    <string name="abraknyde_foret">Forêt des Abraknydes</string>
+    <string name="abraknyde_oree">Forêt des Abraknydes (Orée de la forêt des Abraknydes)</string>
 
     <string name="moon_plage">L\'île de Moon (La plage de Moon)</string>
     <string name="moon_jungle_prof">L\'île de Moon (Jungle profonde de Moon)</string>
 
     <string name="wabbits_ile">L\'île des Wabbits (Île des Wabbits)</string>
     <string name="wabbits_chateau">L\'île des Wabbits (Île du chateau des Wabbits)</string>
+    <string name="wabbits_ilot">L\'île des Wabbits (Ilot des Wabbits)</string>
+    <string name="wabbits_squelette">L\'île des Wabbits (Île des Wabbits Squelette)</string>
 
     <string name="amakna_foret">Amakna (La forêt d\'Amakna)</string>
     <string name="amakna_milli">Amakna (La Millifutaie)</string>
@@ -87,6 +95,9 @@
     <string name="koalak_marecages">Montagne des Koalak (Marécages nauséabond)</string>
     <string name="koalak_canvon">Motagne des Koalaks (Canvon sauvage)</string>
     <string name="koalak_cimetiere">Montagne des Koalaks (Cimetière primitif)</string>
+    <string name="koalak_lacs">Montagne des Koalaks (Lacs enchantés)</string>
+    <string name="koalak_drago">Montagne des Koalaks (Territoire des Dragoeufs)</string>
+    <string name="koalak_kali">Montagne des Koalaks (Forêt de Kaliptus)</string>
 
     <string name="arene">Arène</string>
     <string name="zaap">Zaap</string>
@@ -154,7 +165,7 @@
     <string name="moon">Donjon de Moon</string>
     <string name="scara">Donjon Scarafeuille</string>
     <string name="abraknyde">Donjon des Abraknydes et du Chêne Mou</string>
-    <string name="abraknyde_foret">Forêt des Abraknydes</string>
+
     <string name="cochon">Antre du Dragon Cochon</string>
     <string name="maitre_corbac">Donjon du Maitre Corbac</string>
     <string name="dragoeufs">Sanctuaires des Dragoeufs</string>
@@ -264,6 +275,7 @@
     <string name="atelier_paysan">Atelier des Paysans</string>
     <string name="atelier_buch">Atelier des Bucherons</string>
     <string name="atelier_bou">Atelier des Boucliers</string>
+    <string name="cania_cimetiere">Plaine de Cania (Cimetière de Bonta)</string>
 
 
 </resources>

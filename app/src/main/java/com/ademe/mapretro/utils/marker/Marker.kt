@@ -156,8 +156,5 @@ class Marker(
         MarkerType.HDV_DOC -> R.drawable.hdv_doc
         MarkerType.HDV_ANIMAUX -> R.drawable.hdv_animaux
         MarkerType.HDV_PARCH -> R.drawable.hdv_parch
-
-
-        MarkerType.MULTIPLE -> R.drawable.zaap // TODO
     }
 }

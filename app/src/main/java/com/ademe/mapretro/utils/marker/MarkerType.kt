@@ -72,6 +72,4 @@ enum class MarkerType {
     HDV_DOC,
     HDV_ANIMAUX,
     HDV_PARCH,
-
-    MULTIPLE,
 }
