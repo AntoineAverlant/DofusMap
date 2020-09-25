@@ -1,11 +1,11 @@
 package com.ademe.mapretro.utils.classes
 
 import com.ademe.mapretro.R
-import com.ademe.mapretro.utils.marker.Marker
+import com.ademe.mapretro.utils.marker.MarkerLieu
 import com.ademe.mapretro.utils.marker.MarkerType
 
 val markerStatuePanda = listOf(
-    Marker(
+    MarkerLieu(
         R.string.statue_panda,
         R.string.pandala_neutre,
         26,
@@ -15,7 +15,7 @@ val markerStatuePanda = listOf(
 )
 
 val markerTemplePanda = listOf(
-    Marker(
+    MarkerLieu(
         R.string.temple_panda,
         R.string.amakna_foret,
         5,
@@ -25,7 +25,7 @@ val markerTemplePanda = listOf(
 )
 
 val markerStatueEnu = listOf(
-    Marker(
+    MarkerLieu(
         R.string.statue_enu,
         R.string.astrub_cite,
         6,
@@ -35,7 +35,7 @@ val markerStatueEnu = listOf(
 )
 
 val markerTempleEnu = listOf(
-    Marker(
+    MarkerLieu(
         R.string.temple_enu,
         R.string.amakna_village,
         -1,
@@ -45,7 +45,7 @@ val markerTempleEnu = listOf(
 )
 
 val markerStatueSram = listOf(
-    Marker(
+    MarkerLieu(
         R.string.statue_sram,
         R.string.astrub_cite,
         3,
@@ -55,7 +55,7 @@ val markerStatueSram = listOf(
 )
 
 val markerTempleSram = listOf(
-    Marker(
+    MarkerLieu(
         R.string.temple_sram,
         R.string.amakna_village,
         -4,
@@ -65,7 +65,7 @@ val markerTempleSram = listOf(
 )
 
 val markerStatueEni = listOf(
-    Marker(
+    MarkerLieu(
         R.string.statue_eni,
         R.string.astrub_cite,
         1,
@@ -75,7 +75,7 @@ val markerStatueEni = listOf(
 )
 
 val markerTempleEni = listOf(
-    Marker(
+    MarkerLieu(
         R.string.temple_eni,
         R.string.amakna_campagne,
         7,
@@ -85,7 +85,7 @@ val markerTempleEni = listOf(
 )
 
 val markerStatueCra = listOf(
-    Marker(
+    MarkerLieu(
         R.string.statue_cra,
         R.string.astrub_cite,
         2,
@@ -95,7 +95,7 @@ val markerStatueCra = listOf(
 )
 
 val markerTempleCra = listOf(
-    Marker(
+    MarkerLieu(
         R.string.temple_cra,
         R.string.amakna_village,
         0,
@@ -105,7 +105,7 @@ val markerTempleCra = listOf(
 )
 
 val markerStatueXelor = listOf(
-    Marker(
+    MarkerLieu(
         R.string.statue_xel,
         R.string.astrub_cite,
         0,
@@ -115,7 +115,7 @@ val markerStatueXelor = listOf(
 )
 
 val markerTempleXelor = listOf(
-    Marker(
+    MarkerLieu(
         R.string.temple_xel,
         R.string.amakna_village,
         3,
@@ -125,7 +125,7 @@ val markerTempleXelor = listOf(
 )
 
 val markerStatueSadi = listOf(
-    Marker(
+    MarkerLieu(
         R.string.statue_sadi,
         R.string.astrub_cite,
         3,
@@ -135,7 +135,7 @@ val markerStatueSadi = listOf(
 )
 
 val markerTempleSadi = listOf(
-    Marker(
+    MarkerLieu(
         R.string.temple_sadi,
         R.string.amakna_foret,
         -1,
@@ -145,7 +145,7 @@ val markerTempleSadi = listOf(
 )
 
 val markerStatueIop = listOf(
-    Marker(
+    MarkerLieu(
         R.string.statue_iop,
         R.string.astrub_cite,
         5,
@@ -155,7 +155,7 @@ val markerStatueIop = listOf(
 )
 
 val markerTempleIop = listOf(
-    Marker(
+    MarkerLieu(
         R.string.temple_iop,
         R.string.amakna_village,
         1,
@@ -165,7 +165,7 @@ val markerTempleIop = listOf(
 )
 
 val markerStatueOsa = listOf(
-    Marker(
+    MarkerLieu(
         R.string.statue_osa,
         R.string.astrub_cite,
         -1,
@@ -175,7 +175,7 @@ val markerStatueOsa = listOf(
 )
 
 val markerTempleOsa = listOf(
-    Marker(
+    MarkerLieu(
         R.string.temple_osa,
         R.string.amakna_campagne,
         8,
@@ -185,7 +185,7 @@ val markerTempleOsa = listOf(
 )
 
 val markerStatueSacri = listOf(
-    Marker(
+    MarkerLieu(
         R.string.statue_sacri,
         R.string.astrub_cite,
         -1,
@@ -195,7 +195,7 @@ val markerStatueSacri = listOf(
 )
 
 val markerTempleSacri = listOf(
-    Marker(
+    MarkerLieu(
         R.string.temple_sacri,
         R.string.amakna_montagne,
         -2,
@@ -205,7 +205,7 @@ val markerTempleSacri = listOf(
 )
 
 val markerStatueFeca = listOf(
-    Marker(
+    MarkerLieu(
         R.string.statue_feca,
         R.string.astrub_cite,
         3,
@@ -215,7 +215,7 @@ val markerStatueFeca = listOf(
 )
 
 val markerTempleFeca = listOf(
-    Marker(
+    MarkerLieu(
         R.string.temple_feca,
         R.string.amakna_champ,
         12,
@@ -225,7 +225,7 @@ val markerTempleFeca = listOf(
 )
 
 val markerStatueEca = listOf(
-    Marker(
+    MarkerLieu(
         R.string.statue_eca,
         R.string.astrub_cite,
         6,
@@ -235,7 +235,7 @@ val markerStatueEca = listOf(
 )
 
 val markerTempleEca = listOf(
-    Marker(
+    MarkerLieu(
         R.string.temple_eca,
         R.string.amakna_kawaii,
         1,

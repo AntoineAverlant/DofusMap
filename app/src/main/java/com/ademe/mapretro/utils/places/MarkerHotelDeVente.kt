@@ -1,11 +1,11 @@
 package com.ademe.mapretro.utils.places
 
 import com.ademe.mapretro.R
-import com.ademe.mapretro.utils.marker.Marker
+import com.ademe.mapretro.utils.marker.MarkerLieu
 import com.ademe.mapretro.utils.marker.MarkerType
 
 val markerHdvBouclier = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_bou,
         R.string.pandala_neutre,
         26,
@@ -16,21 +16,21 @@ val markerHdvBouclier = listOf(
 
 
 val markerHdvBucheron = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_buch,
         R.string.astrub_cite,
         3,
         -21,
         MarkerType.HDV_BUCHERON
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_buch,
         R.string.brakmar,
         -22,
         37,
         MarkerType.HDV_BUCHERON
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_buch,
         R.string.bonta,
         -30,
@@ -40,21 +40,21 @@ val markerHdvBucheron = listOf(
 )
 
 val markerHdvPaysan = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_paysan,
         R.string.astrub_cite,
         3,
         -17,
         MarkerType.HDV_PAYSAN
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_paysan,
         R.string.bonta,
         -29,
         -54,
         MarkerType.HDV_PAYSAN
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_paysan,
         R.string.brakmar,
         -25,
@@ -64,21 +64,21 @@ val markerHdvPaysan = listOf(
 )
 
 val markerHdvTailleurs = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_tailleur,
         R.string.astrub_cite,
         0,
         -22,
         MarkerType.HDV_TAILLEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_tailleur,
         R.string.brakmar,
         -23,
         35,
         MarkerType.HDV_TAILLEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_tailleur,
         R.string.bonta,
         -30,
@@ -88,21 +88,21 @@ val markerHdvTailleurs = listOf(
 )
 
 val markerHdvCordo = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_cordo,
         R.string.astrub_cite,
         0,
         -20,
         MarkerType.HDV_CORDO
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_cordo,
         R.string.brakmar,
         -24,
         36,
         MarkerType.HDV_CORDO
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_cordo,
         R.string.bonta,
         -29,
@@ -112,21 +112,21 @@ val markerHdvCordo = listOf(
 )
 
 val markerHdvSculpteur = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_sculpteur,
         R.string.astrub_cite,
         3,
         -20,
         MarkerType.HDV_SCULPTEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_sculpteur,
         R.string.brakmar,
         -22,
         40,
         MarkerType.HDV_SCULPTEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_sculpteur,
         R.string.bonta,
         -29,
@@ -136,21 +136,21 @@ val markerHdvSculpteur = listOf(
 )
 
 val markerHdvForgerons = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_forge,
         R.string.astrub_cite,
         6,
         -18,
         MarkerType.HDV_FORGERONS
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_forge,
         R.string.brakmar,
         -21,
         35,
         MarkerType.HDV_FORGERONS
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_forge,
         R.string.bonta,
         -28,
@@ -160,21 +160,21 @@ val markerHdvForgerons = listOf(
 )
 
 val markerHdvAlchi = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_alch,
         R.string.astrub_cite,
         4,
         -18,
         MarkerType.HDV_ALCHI
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_alch,
         R.string.brakmar,
         -26,
         36,
         MarkerType.HDV_ALCHI
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_alch,
         R.string.bonta,
         -33,
@@ -184,21 +184,21 @@ val markerHdvAlchi = listOf(
 )
 
 val markerHdvMineurs = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_min,
         R.string.astrub_cite,
         6,
         -19,
         MarkerType.HDV_MINEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_min,
         R.string.brakmar,
         -20,
         34,
         MarkerType.HDV_MINEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_min,
         R.string.bonta,
         -28,
@@ -208,28 +208,28 @@ val markerHdvMineurs = listOf(
 )
 
 val markerHdvPecheur = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_pech,
         R.string.astrub_cite,
         0,
         -18,
         MarkerType.HDV_PECHEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_poiss,
         R.string.astrub_cite,
         0,
         -17,
         MarkerType.HDV_PECHEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_poiss_pech,
         R.string.brakmar,
         -27,
         37,
         MarkerType.HDV_PECHEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_poiss_pech,
         R.string.bonta,
         -35,
@@ -240,21 +240,21 @@ val markerHdvPecheur = listOf(
 
 
 val markerHdvBoulangers = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_boulanger,
         R.string.astrub_cite,
         3,
         -15,
         MarkerType.HDV_BOULANGER
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_boulanger,
         R.string.brakmar,
         -24,
         31,
         MarkerType.HDV_BOULANGER
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_boulanger,
         R.string.bonta,
         -26,
@@ -264,21 +264,21 @@ val markerHdvBoulangers = listOf(
 )
 
 val markerHdvBijou = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_bijou,
         R.string.astrub_cite,
         6,
         -17,
         MarkerType.HDV_BIJOU
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_bijou,
         R.string.brakmar,
         -26,
         38,
         MarkerType.HDV_BIJOU
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_bijou,
         R.string.bonta,
         -33,
@@ -288,28 +288,28 @@ val markerHdvBijou = listOf(
 )
 
 val markerHdvBoucher = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_bouch,
         R.string.astrub_cite,
         2,
         -14,
         MarkerType.HDV_BOUCHER
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_chass,
         R.string.astrub_cite,
         0,
         -16,
         MarkerType.HDV_BOUCHER
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_bouch_chass,
         R.string.brakmar,
         -27,
         32,
         MarkerType.HDV_BOUCHER
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_bouch_chass,
         R.string.bonta,
         -30,
@@ -320,14 +320,14 @@ val markerHdvBoucher = listOf(
 
 
 val markerHdvAmes = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_ames,
         R.string.brakmar,
         -19,
         39,
         MarkerType.HDV_AMES
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_ames,
         R.string.bonta,
         -27,
@@ -337,7 +337,7 @@ val markerHdvAmes = listOf(
 )
 
 val markerHdvFeeArti = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_fee,
         R.string.foire,
         -10,
@@ -347,21 +347,21 @@ val markerHdvFeeArti = listOf(
 )
 
 val markerHdvResource = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_res,
         R.string.astrub_cite,
         4,
         -17,
         MarkerType.HDV_RESOURCE
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_res,
         R.string.brakmar,
         -25,
         33,
         MarkerType.HDV_RESOURCE
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_res,
         R.string.bonta,
         -32,
@@ -371,14 +371,14 @@ val markerHdvResource = listOf(
 )
 
 val markerHdvDocuments = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_doc,
         R.string.brakmar,
         -31,
         38,
         MarkerType.HDV_DOC
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_doc,
         R.string.bonta,
         -36,
@@ -388,14 +388,14 @@ val markerHdvDocuments = listOf(
 )
 
 val markerHdvAnimaux = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_anim,
         R.string.brakmar,
         -31,
         37,
         MarkerType.HDV_ANIMAUX
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_anim,
         R.string.bonta,
         -36,
@@ -405,14 +405,14 @@ val markerHdvAnimaux = listOf(
 )
 
 val markerHdvParch = listOf(
-    Marker(
+    MarkerLieu(
         R.string.hdv_parch,
         R.string.brakmar,
         -23,
         38,
         MarkerType.HDV_PARCH
     ),
-    Marker(
+    MarkerLieu(
         R.string.hdv_parch,
         R.string.bonta,
         -33,

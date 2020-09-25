@@ -9,3 +9,8 @@ enum class MarkerMapType {
     CLASSES,
     EMOTE,
 }
+
+enum class MarkerMenuMapType {
+    LIEU_MENU,
+    RES_MENU
+}

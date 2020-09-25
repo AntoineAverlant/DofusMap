@@ -3,17 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/rounded_top_corner"
     android:paddingTop="5dp"
-    android:paddingBottom="5dp"
-    android:background="@drawable/rounded_top_corner">
+    android:paddingBottom="5dp">
+
+    <ImageButton
+        android:id="@+id/toggle"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@android:color/transparent"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_arrow"
+        android:rotation="180"
+        app:layout_constraintBottom_toTopOf="@id/fragmentContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/selector"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:scrollbars="none"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fragmentContainer"
+        app:layout_constraintEnd_toStartOf="@id/toggle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -22,7 +36,7 @@
             android:layout_height="match_parent">
 
             <ImageButton
-                android:id="@+id/zaapButton"
+                android:id="@+id/lieuButton"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="15dp"
@@ -34,73 +48,61 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+
             <ImageButton
-                android:id="@+id/diversButton"
+                android:id="@+id/boisButton"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="15dp"
                 android:background="@android:color/transparent"
                 android:padding="10dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/balloon"
+                android:src="@drawable/frene"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/zaapButton"
+                app:layout_constraintStart_toEndOf="@id/lieuButton"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/mineButton"
+                android:id="@+id/mineraisButton"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="15dp"
                 android:background="@android:color/transparent"
                 android:padding="10dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/mine"
+                android:src="@drawable/fer"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/diversButton"
+                app:layout_constraintStart_toEndOf="@id/boisButton"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/atelierButton"
+                android:id="@+id/cerealButton"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="15dp"
                 android:background="@android:color/transparent"
                 android:padding="10dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/hdv_res"
+                android:src="@drawable/ble"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/mineButton"
+                app:layout_constraintStart_toEndOf="@id/mineraisButton"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/classeButton"
+                android:id="@+id/fleursButton"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="15dp"
                 android:background="@android:color/transparent"
                 android:padding="10dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/iop"
+                android:src="@drawable/edelweiss"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/atelierButton"
+                app:layout_constraintStart_toEndOf="@id/cerealButton"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/emoteButton"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="15dp"
-                android:background="@android:color/transparent"
-                android:padding="10dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/emote"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/classeButton"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/donjonButton"
+                android:id="@+id/poissonButton"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="15dp"
@@ -108,12 +110,22 @@
                 android:background="@android:color/transparent"
                 android:padding="10dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/donjon"
+                android:src="@drawable/poisson_mer"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/emoteButton"
+                app:layout_constraintStart_toEndOf="@id/fleursButton"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </HorizontalScrollView>
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selector" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

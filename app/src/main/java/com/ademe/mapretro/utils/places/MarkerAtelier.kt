@@ -1,25 +1,25 @@
 package com.ademe.mapretro.utils.places
 
 import com.ademe.mapretro.R
-import com.ademe.mapretro.utils.marker.Marker
+import com.ademe.mapretro.utils.marker.MarkerLieu
 import com.ademe.mapretro.utils.marker.MarkerType
 
 val markerAtelierBouclier = listOf(
-    Marker(
+    MarkerLieu(
         R.string.atelier_bou,
         R.string.pandala_air,
         17,
         -34,
         MarkerType.ATELIER_BOUBOU
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_bou,
         R.string.pandala_terre,
         30,
         -37,
         MarkerType.ATELIER_BOUBOU
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_bou,
         R.string.pandala_eau,
         22,
@@ -29,42 +29,42 @@ val markerAtelierBouclier = listOf(
 )
 
 val markerAtelierBucheron = listOf(
-    Marker(
+    MarkerLieu(
         R.string.atelier_buch,
         R.string.pandala_neutre,
         26,
         -36,
         MarkerType.ATELIER_BUCHERON
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_buch,
         R.string.astrub_foret,
         1,
         -25,
         MarkerType.ATELIER_BUCHERON
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_buch,
         R.string.amakna_foret,
         6,
         16,
         MarkerType.ATELIER_BUCHERON
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_buch,
         R.string.amakna_milli,
         4,
         8,
         MarkerType.ATELIER_BUCHERON
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_buch,
         R.string.amakna_scara,
         4,
         30,
         MarkerType.ATELIER_BUCHERON
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_buch,
         R.string.bonta,
         -23,
@@ -74,35 +74,35 @@ val markerAtelierBucheron = listOf(
 )
 
 val markerAtelierPaysan = listOf(
-    Marker(
+    MarkerLieu(
         R.string.atelier_paysan,
         R.string.astrub_champ,
         7,
         -25,
         MarkerType.ATELIER_PAYSAN
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_paysan,
         R.string.amakna_champ,
         5,
         6,
         MarkerType.ATELIER_PAYSAN
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_paysan,
         R.string.amakna_scara,
         2,
         25,
         MarkerType.ATELIER_PAYSAN
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_paysan,
         R.string.amakna_scara,
         1,
         23,
         MarkerType.ATELIER_PAYSAN
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_paysan,
         R.string.bonta,
         -30,
@@ -112,28 +112,28 @@ val markerAtelierPaysan = listOf(
 )
 
 val markerAtelierTailleurs = listOf(
-    Marker(
+    MarkerLieu(
         R.string.atelier_cordo,
         R.string.astrub_cite,
         1,
         -22,
         MarkerType.ATELIER_TAILLEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_cordo,
         R.string.amakna_village,
         2,
         2,
         MarkerType.ATELIER_TAILLEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_cordo,
         R.string.brakmar,
         -24,
         35,
         MarkerType.ATELIER_TAILLEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_tailleur,
         R.string.bonta,
         -31,
@@ -143,28 +143,28 @@ val markerAtelierTailleurs = listOf(
 )
 
 val markerAtelierCordo = listOf(
-    Marker(
+    MarkerLieu(
         R.string.atelier_cordo,
         R.string.astrub_cite,
         0,
         -21,
         MarkerType.ATELIER_CORDO
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_cordo,
         R.string.amakna_village,
         5,
         1,
         MarkerType.ATELIER_CORDO
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_cordo,
         R.string.brakmar,
         -23,
         36,
         MarkerType.ATELIER_CORDO
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_cordo,
         R.string.bonta,
         -30,
@@ -174,49 +174,49 @@ val markerAtelierCordo = listOf(
 )
 
 val markerAtelierSculpteur = listOf(
-    Marker(
+    MarkerLieu(
         R.string.atelier_scult,
         R.string.astrub_cite,
         2,
         -21,
         MarkerType.ATELIER_SCULPTEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_scult,
         R.string.amakna_foret,
         3,
         12,
         MarkerType.ATELIER_SCULPTEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_scult,
         R.string.amakna_bandit,
         14,
         20,
         MarkerType.ATELIER_SCULPTEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_scult,
         R.string.amakna_scara,
         2,
         30,
         MarkerType.ATELIER_SCULPTEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_scult,
         R.string.amakna_scara,
         5,
         29,
         MarkerType.ATELIER_SCULPTEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_scult,
         R.string.brakmar,
         -21,
         39,
         MarkerType.ATELIER_SCULPTEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_scult,
         R.string.bonta,
         -30,
@@ -226,28 +226,28 @@ val markerAtelierSculpteur = listOf(
 )
 
 val markerAtelierForgerons = listOf(
-    Marker(
+    MarkerLieu(
         R.string.atelier_forge,
         R.string.astrub_cite,
         6,
         -21,
         MarkerType.ATELIER_FORGERONS
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_forge,
         R.string.amakna_village,
         -1,
         2,
         MarkerType.ATELIER_FORGERONS
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_forge,
         R.string.brakmar,
         -21,
         34,
         MarkerType.ATELIER_FORGERONS
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_forge,
         R.string.bonta,
         -26,
@@ -257,28 +257,28 @@ val markerAtelierForgerons = listOf(
 )
 
 val markerAtelierAlchi = listOf(
-    Marker(
+    MarkerLieu(
         R.string.atelier_alchi,
         R.string.astrub_cite,
         5,
         -20,
         MarkerType.ATELIER_ALCHI
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_alchi,
         R.string.amakna_bord_foret,
         1,
         16,
         MarkerType.ATELIER_ALCHI
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_alchi,
         R.string.brakmar,
         -26,
         37,
         MarkerType.ATELIER_ALCHI
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_alchi,
         R.string.bonta,
         -32,
@@ -288,42 +288,42 @@ val markerAtelierAlchi = listOf(
 )
 
 val markerAtelierMineurs = listOf(
-    Marker(
+    MarkerLieu(
         R.string.atelier_mineur,
         R.string.astrub_cite,
         7,
         -20,
         MarkerType.ATELIER_MINEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_mineur,
         R.string.amakna_montagne,
         -2,
         -3,
         MarkerType.ATELIER_MINEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_mineur,
         R.string.amakna_oree,
         -1,
         5,
         MarkerType.ATELIER_MINEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_mineur,
         R.string.amakna_scara,
         3,
         19,
         MarkerType.ATELIER_MINEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_mineur,
         R.string.brakmar,
         -20,
         33,
         MarkerType.ATELIER_MINEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_mineur,
         R.string.bonta,
         -28,
@@ -333,35 +333,35 @@ val markerAtelierMineurs = listOf(
 )
 
 val markerAtelierPecheur = listOf(
-    Marker(
+    MarkerLieu(
         R.string.atelier_poiss_pech,
         R.string.astrub_cite,
         2,
         -17,
         MarkerType.ATELIER_PECHEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_pech,
         R.string.amakna_kawaii,
         9,
         0,
         MarkerType.ATELIER_PECHEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_poiss_pech,
         R.string.sufokia,
         14,
         26,
         MarkerType.ATELIER_PECHEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_poiss_pech,
         R.string.brakmar,
         -24,
         40,
         MarkerType.ATELIER_PECHEUR
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_poiss_pech,
         R.string.bonta,
         -35,
@@ -372,49 +372,49 @@ val markerAtelierPecheur = listOf(
 
 
 val markerAtelierBoulangers = listOf(
-    Marker(
+    MarkerLieu(
         R.string.atelier_boulanger,
         R.string.astrub_cite,
         2,
         -16,
         MarkerType.ATELIER_BOULANGER
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_boulanger,
         R.string.amakna_village,
         3,
         0,
         MarkerType.ATELIER_BOULANGER
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_boulanger,
         R.string.amakna_foret,
         4,
         13,
         MarkerType.ATELIER_BOULANGER
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_boulanger,
         R.string.amakna_scara,
         -1,
         23,
         MarkerType.ATELIER_BOULANGER
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_boulanger,
         R.string.amakna_scara,
         3,
         23,
         MarkerType.ATELIER_BOULANGER
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_boulanger,
         R.string.brakmar,
         -22,
         32,
         MarkerType.ATELIER_BOULANGER
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_boulanger,
         R.string.bonta,
         -27,
@@ -424,35 +424,35 @@ val markerAtelierBoulangers = listOf(
 )
 
 val markerAtelierBijou = listOf(
-    Marker(
+    MarkerLieu(
         R.string.atelier_bij,
         R.string.astrub_cite,
         5,
         -16,
         MarkerType.ATELIER_BIJOU
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_bij,
         R.string.amakna_village,
         0,
         2,
         MarkerType.ATELIER_BIJOU
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_bij,
         R.string.amakna_scara,
         2,
         29,
         MarkerType.ATELIER_BIJOU
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_bij,
         R.string.brakmar,
         -27,
         39,
         MarkerType.ATELIER_BIJOU
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_bij,
         R.string.bonta,
         -33,
@@ -462,28 +462,28 @@ val markerAtelierBijou = listOf(
 )
 
 val markerAtelierBoucher = listOf(
-    Marker(
+    MarkerLieu(
         R.string.atelier_bouch_chass,
         R.string.astrub_cite,
         0,
         -15,
         MarkerType.ATELIER_BOUCHER
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_chass,
         R.string.amakna_foret,
         1,
         13,
         MarkerType.ATELIER_BOUCHER
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_bouch,
         R.string.brakmar,
         -29,
         32,
         MarkerType.ATELIER_BOUCHER
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_bouch,
         R.string.bonta,
         -32,
@@ -494,21 +494,21 @@ val markerAtelierBoucher = listOf(
 
 
 val markerAtelierForgemage = listOf(
-    Marker(
+    MarkerLieu(
         R.string.atelier_fm,
         R.string.astrub_cite,
         -5,
         -12,
         MarkerType.ATELIER_FORGEMAGE
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_fm,
         R.string.brakmar,
         -29,
         38,
         MarkerType.ATELIER_FORGEMAGE
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_fm,
         R.string.bonta,
         -38,
@@ -518,14 +518,14 @@ val markerAtelierForgemage = listOf(
 )
 
 val markerAtelierBrico = listOf(
-    Marker(
+    MarkerLieu(
         R.string.atelier_brico,
         R.string.brakmar,
         -28,
         35,
         MarkerType.ATELIER_BRICO
     ),
-    Marker(
+    MarkerLieu(
         R.string.atelier_brico,
         R.string.bonta,
         -27,
@@ -535,7 +535,7 @@ val markerAtelierBrico = listOf(
 )
 
 val markerAtelierFeeArti = listOf(
-    Marker(
+    MarkerLieu(
         R.string.atelier_fee,
         R.string.cania_massif,
         -16,

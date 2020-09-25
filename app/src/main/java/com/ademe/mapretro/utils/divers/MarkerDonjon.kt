@@ -1,270 +1,270 @@
 package com.ademe.mapretro.utils.divers
 
 import com.ademe.mapretro.R
-import com.ademe.mapretro.utils.marker.Marker
+import com.ademe.mapretro.utils.marker.MarkerLieu
 import com.ademe.mapretro.utils.marker.MarkerType
 
 val markerDonjon= listOf(
-    Marker(
+    MarkerLieu(
         R.string.bouftou,
         R.string.tainela,
         2,
         -34,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.champs,
         R.string.astrub_champ,
         7,
         -25,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.forgeron,
         R.string.amakna_bandit,
         13,
         21,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.larve,
         R.string.amakna_montagne,
         -3,
         -4,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.squelette,
         R.string.amakna_cimetiere,
         10,
         15,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.bulbes,
         R.string.pandala_eau_bordure,
         19,
         -22,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.pandikaze,
         R.string.pandala_air_bordure,
         18,
         -36,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.ktsoune,
         R.string.pandala_terre_bordure,
         32,
         -38,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.bwork,
         R.string.village_bwork,
         -5,
         10,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.tofus,
         R.string.amakna_champ,
         5,
         6,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.skeunk,
         R.string.koalak_vallee,
         -20,
         10,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.bworker,
         R.string.sidimote,
         -21,
         12,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.craqueleurs,
         R.string.amakna_montagne,
         -3,
         -7,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.familiers,
         R.string.koalak_marecages,
         -7,
         -1,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.firefoux,
         R.string.pandala_feu_bordure,
         28,
         -52,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.koulosse,
         R.string.koalak_canvon,
         -17,
         8,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.canides,
         R.string.sidimote,
         -24,
         1,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.moon,
         R.string.moon_jungle_prof,
         31,
         8,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.scara,
         R.string.amakna_scara,
         1,
         26,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.abraknyde,
         R.string.abraknyde_foret,
         -10,
         -4,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.cochon,
         R.string.amakna_porcos,
         -1,
         33,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.maitre_corbac,
         R.string.cania_corbac,
         -19,
         -62,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.dragoeufs,
         R.string.amakna_dragoeufs,
         -3,
         24,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.minotoror,
         R.string.ile_minotoror,
         -42,
         -17,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.nowel,
         R.string.zone_art,
         -63,
         -100,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.rat_amakna,
         R.string.astrub_tofus,
         6,
         -9,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.rat_brakmar,
         R.string.brakmar,
         -26,
         31,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.rat_bonta,
         R.string.bonta,
         -35,
         -59,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.wabbits,
         R.string.wabbits_chateau,
         29,
         -12,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.ensable,
         R.string.astrub_calanques,
         13,
         -28,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.grotte_hesque,
         R.string.oto_plage,
         -59,
         15,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.arche_oto,
         R.string.oto_tourbiere,
         -55,
         -4,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.goulet_rasboul,
         R.string.oto_plaines,
         -51,
         9,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.tynril,
         R.string.oto_jungle,
         -53,
         20,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.kimbo,
         R.string.oto_canopee,
         -54,
         16,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.kralamoure,
         R.string.oto_tourbiere_nause,
         -60,
         -8,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.blops,
         R.string.cania_massif,
         -25,
         -17,
         MarkerType.DONJON
     ),
-    Marker(
+    MarkerLieu(
         R.string.fungus,
         R.string.sidimote,
         -18,

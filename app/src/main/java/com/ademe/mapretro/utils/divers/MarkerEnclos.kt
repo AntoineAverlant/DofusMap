@@ -1,88 +1,88 @@
 package com.ademe.mapretro.utils.divers
 
 import com.ademe.mapretro.R
-import com.ademe.mapretro.utils.marker.Marker
+import com.ademe.mapretro.utils.marker.MarkerLieu
 import com.ademe.mapretro.utils.marker.MarkerType
 
 val markerEnclos = listOf(
-    Marker(
+    MarkerLieu(
         R.string.enclos,
         R.string.brakmar,
         -30,
         35,
         MarkerType.ENCLOS
     ),
-    Marker(
+    MarkerLieu(
         R.string.enclos,
         R.string.brakmar,
         -31,
         36,
         MarkerType.ENCLOS
     ),
-    Marker(
+    MarkerLieu(
         R.string.enclos,
         R.string.brakmar,
         -30,
         36,
         MarkerType.ENCLOS
     ),
-    Marker(
+    MarkerLieu(
         R.string.enclos,
         R.string.brakmar,
         -29,
         36,
         MarkerType.ENCLOS
     ),
-    Marker(
+    MarkerLieu(
         R.string.enclos,
         R.string.brakmar,
         -30,
         37,
         MarkerType.ENCLOS
     ),
-    Marker(
+    MarkerLieu(
         R.string.enclos,
         R.string.brakmar,
         -29,
         37,
         MarkerType.ENCLOS
     ),
-    Marker(
+    MarkerLieu(
         R.string.enclos,
         R.string.bonta,
         -36,
         -57,
         MarkerType.ENCLOS
     ),
-    Marker(
+    MarkerLieu(
         R.string.enclos,
         R.string.bonta,
         -37,
         -57,
         MarkerType.ENCLOS
     ),
-    Marker(
+    MarkerLieu(
         R.string.enclos,
         R.string.bonta,
         -38,
         -57,
         MarkerType.ENCLOS
     ),
-    Marker(
+    MarkerLieu(
         R.string.enclos,
         R.string.bonta,
         -38,
         -56,
         MarkerType.ENCLOS
     ),
-    Marker(
+    MarkerLieu(
         R.string.enclos,
         R.string.bonta,
         -37,
         -56,
         MarkerType.ENCLOS
     ),
-    Marker(
+    MarkerLieu(
         R.string.enclos,
         R.string.bonta,
         -37,

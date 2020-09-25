@@ -1,81 +1,81 @@
 package com.ademe.mapretro.utils.divers
 
 import com.ademe.mapretro.R
-import com.ademe.mapretro.utils.marker.Marker
+import com.ademe.mapretro.utils.marker.MarkerLieu
 import com.ademe.mapretro.utils.marker.MarkerType
 
 val markerTransporteurBrig= listOf(
-    Marker(
+    MarkerLieu(
         R.string.tranpo_brig,
         R.string.brakmar,
         -27,
         29,
         MarkerType.TRANSPO_BRIG
     ),
-    Marker(
+    MarkerLieu(
         R.string.tranpo_brig,
         R.string.oto_canopee,
         -53,
         15,
         MarkerType.TRANSPO_BRIG
     ),
-    Marker(
+    MarkerLieu(
         R.string.tranpo_brig,
         R.string.ile_minotoror,
         -41,
         -18,
         MarkerType.TRANSPO_BRIG
     ),
-    Marker(
+    MarkerLieu(
         R.string.tranpo_brig,
         R.string.bonta,
         -30,
         -48,
         MarkerType.TRANSPO_BRIG
     ),
-    Marker(
+    MarkerLieu(
         R.string.tranpo_brig,
         R.string.brigandins,
         -17,
         -26,
         MarkerType.TRANSPO_BRIG
     ),
-    Marker(
+    MarkerLieu(
         R.string.tranpo_brig,
         R.string.pandala_air_bordure,
         18,
         -39,
         MarkerType.TRANSPO_BRIG
     ),
-    Marker(
+    MarkerLieu(
         R.string.tranpo_brig,
         R.string.wabbits_ile,
         23,
         -3,
         MarkerType.TRANSPO_BRIG
     ),
-    Marker(
+    MarkerLieu(
         R.string.tranpo_brig,
         R.string.moon_plage,
         35,
         4,
         MarkerType.TRANSPO_BRIG
     ),
-    Marker(
+    MarkerLieu(
         R.string.tranpo_brig,
         R.string.amakna_penin,
         11,
         30,
         MarkerType.TRANSPO_BRIG
     ),
-    Marker(
+    MarkerLieu(
         R.string.tranpo_brig,
         R.string.amakna_dragoeufs,
         -3,
         27,
         MarkerType.TRANSPO_BRIG
     ),
-    Marker(
+    MarkerLieu(
         R.string.tranpo_brig,
         R.string.amakna_campagne,
         -1,

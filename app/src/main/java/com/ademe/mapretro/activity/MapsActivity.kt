@@ -9,20 +9,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.ademe.mapretro.R
 import com.ademe.mapretro.utils.map.ListMapMarker
 import com.ademe.mapretro.utils.map.LocalTileProvider
-import com.ademe.mapretro.utils.map.MarkerMapType
+import com.ademe.mapretro.utils.map.MarkerMenuMapType
 import com.ademe.mapretro.utils.marker.*
-import com.ademe.mapretro.utils.resource.abra.resourceAbra
-import com.ademe.mapretro.utils.resource.astrub.*
-import com.ademe.mapretro.utils.resource.brakmar.resourceBrakmar
-import com.ademe.mapretro.utils.resource.koalak.resourceKoalak
-import com.ademe.mapretro.utils.resource.nowell.resourceNowell
-import com.ademe.mapretro.utils.resource.pandala.resourcePandalaAir
-import com.ademe.mapretro.utils.resource.pandala.resourcePandalaEau
-import com.ademe.mapretro.utils.resource.pandala.resourcePandalaFeu
-import com.ademe.mapretro.utils.resource.pandala.resourcePandalaTerre
-import com.ademe.mapretro.utils.resource.sidimote.resourceSidimote
-import com.ademe.mapretro.utils.resource.tainela.resourceTainela
-import com.ademe.mapretro.utils.resource.wabbit.resourceWabbits
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -42,26 +30,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     // lists marker
     private val listMapMarker = ListMapMarker()
 
-    private val list = concatenate(
-        resourceAbra,
-        resourceAstrubChamp,
-        resourceAstrubCite,
-        resourceAstrubContour,
-        resourceAstrubForet,
-        resourceAstrubMine,
-        resourceAstrubRepos,
-        resourceKoalak,
-        resourceBrakmar,
-        resourcePandalaAir,
-        resourcePandalaEau,
-        resourcePandalaFeu,
-        resourcePandalaTerre,
-        resourceNowell,
-        resourceTainela,
-        resourceSidimote,
-        resourceWabbits
-    )
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
@@ -70,15 +38,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         )
         (supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment).getMapAsync(this)
 
-        menuSelection.init(
-            zaapActivated = true,
-            diversActivated = true,
-            classeActivated = true,
-            atelierActivated = true
-        )
+        menuSelection.init(supportFragmentManager)
 
-        menuSelection.onMenuClick = { markerMapType, enabled ->
-            vm.setMarkerMap(markerMapType, enabled)
+        menuSelection.onLieuMenuClick = { listMarkerLieu, enabled ->
+            vm.setMarkerLieu(listMarkerLieu, enabled)
         }
 
         setObservables()
@@ -100,10 +63,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             //animateCamera(CameraUpdateFactory.zoomTo(4.5F), 2000, null)
 
             setOnMarkerClickListener {
-                val markerRes = listMapMarker.mapMarkerRes[it]
+                val markerRes = listMapMarker.mapResMarker[it]
                 markerRes?.let {
                     infoMarker.showInfo(markerRes)
-                } ?:  infoMarker.hide()
+                } ?: infoMarker.hide()
                 false
             }
             setOnMapClickListener {
@@ -134,76 +97,54 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     loader.visibility = View.GONE
                 }, 50)
                 vm.setMapReady(false)
-
-                // TODO
-                addListMarkerRes(list)
             }
         })
 
-        vm.markerDonjonEnabled.observe(this, Observer { isMarkerEnabled ->
-            if (isMarkerEnabled) {
-                addListMarker(markerDonjons, MarkerMapType.DONJONS)
+        vm.listMarkerLieu.observe(this, Observer { pairMarkerEnabled ->
+            val listMarker = pairMarkerEnabled.first
+            val enabled = pairMarkerEnabled.second
+            if (enabled) {
+                addListMarker(listMarker)
             } else {
-                listMapMarker.clearListMarker(MarkerMapType.DONJONS)
-            }
-        })
-
-        vm.markerMinesEnabled.observe(this, Observer { isMarkerEnabled ->
-            if (isMarkerEnabled) {
-                addListMarker(markerMines, MarkerMapType.MINES)
-            } else {
-                listMapMarker.clearListMarker(MarkerMapType.MINES)
-            }
-        })
-
-        vm.markerZaapsEnabled.observe(this, Observer { isMarkerEnabled ->
-            if (isMarkerEnabled) {
-                addListMarker(markerZaaps, MarkerMapType.ZAAPS)
-            } else {
-                listMapMarker.clearListMarker(MarkerMapType.ZAAPS)
-            }
-        })
-        vm.markerAtelierHdvEnabled.observe(this, Observer { isMarkerEnabled ->
-            if (isMarkerEnabled) {
-                addListMarker(markerAtelierHdv, MarkerMapType.ATELIER_HDV)
-            } else {
-                listMapMarker.clearListMarker(MarkerMapType.ATELIER_HDV)
-            }
-        })
-        vm.markerDiversEnabled.observe(this, Observer { isMarkerEnabled ->
-            if (isMarkerEnabled) {
-                addListMarker(markerDivers, MarkerMapType.DIVERS)
-            } else {
-                listMapMarker.clearListMarker(MarkerMapType.DIVERS)
-            }
-        })
-        vm.markerClassesEnabled.observe(this, Observer { isMarkerEnabled ->
-            if (isMarkerEnabled) {
-                addListMarker(markerClasses, MarkerMapType.CLASSES)
-            } else {
-                listMapMarker.clearListMarker(MarkerMapType.CLASSES)
-            }
-        })
-        vm.markerEmoteEnabled.observe(this, Observer { isMarkerEnabled ->
-            if (isMarkerEnabled) {
-                addListMarker(markerEmotes, MarkerMapType.EMOTE)
-            } else {
-                listMapMarker.clearListMarker(MarkerMapType.EMOTE)
+                listMapMarker.clearLieuMarker(listMarker)
             }
         })
     }
 
-    private fun addListMarkerRes(markerList: List<MarkerRes>) {
-        markerList.forEach { item ->
-            listMapMarker.addResMarker(item, mMap.addMarker(item.getMarkerOptions(this)))
+    private fun addListMarker(markerList: List<MarkerLieu>) {
+        markerList.forEach {
+            listMapMarker.addLieuMarker(it, mMap.addMarker(it.getMarkerOptions(this)))
+        }
+    }
+}
+
+/*
+private fun listMarker(isMarkerEnabled: Boolean, markerType: MarkerMenuMapType) {
+        if (isMarkerEnabled) {
+            when (markerType) {
+                MarkerMenuMapType.LIEU_MENU -> addListMarker(markerLieuMenu, markerType)
+                MarkerMenuMapType.BOIS_MENU -> addListResMarker(markerBois, markerType)
+                MarkerMenuMapType.CEREAL_MENU -> addListResMarker(markerCereal, markerType)
+                MarkerMenuMapType.MINERAIS_MENU -> addListResMarker(markerMinerais, markerType)
+                MarkerMenuMapType.FLEURS_MENU -> addListResMarker(markerFleurs, markerType)
+                MarkerMenuMapType.POISSONS_MENU -> addListResMarker(markerPoisson, markerType)
+            }
+        } else {
+            listMapMarker.clearListMarker(markerType)
         }
     }
 
-    private fun addListMarker(markerList: List<List<Marker>>, type: MarkerMapType) {
+    private fun addListMarker(markerList: List<List<Marker>>, type: MarkerMenuMapType) {
         markerList.forEach { list ->
             list.forEach {
                 listMapMarker.addMapMarker(type, mMap.addMarker(it.getMarkerOptions(this)))
             }
         }
     }
-}
+
+    private fun addListResMarker(markerList: List<MarkerRes>, type: MarkerMenuMapType) {
+        markerList.forEach {
+            listMapMarker.addResMarker(it, mMap.addMarker(it.getMarkerOptions(this)))
+        }
+    }
+ */

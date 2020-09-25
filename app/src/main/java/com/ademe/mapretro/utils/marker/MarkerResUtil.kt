@@ -54,14 +54,14 @@ fun getBitmapRes(markerType: MarkerTypeResource): Int = when (markerType) {
     MarkerTypeResource.TREFLE -> R.drawable.trefle
     MarkerTypeResource.MENTHE -> R.drawable.menthe
     MarkerTypeResource.EDELWEISS -> R.drawable.edelweiss
-    MarkerTypeResource.POISS_GEANT_MER -> R.drawable.zaap // TODO
-    MarkerTypeResource.POISS_GEANT_RIV -> R.drawable.zaap // TODO
-    MarkerTypeResource.POISS_GROS_MER -> R.drawable.zaap // TODO
-    MarkerTypeResource.POISS_GROS_RIV -> R.drawable.zaap // TODO
-    MarkerTypeResource.POISS_MER -> R.drawable.zaap // TODO
-    MarkerTypeResource.POISS_RIV -> R.drawable.zaap // TODO
-    MarkerTypeResource.POISS_PETIT_MER -> R.drawable.zaap // TODO
-    MarkerTypeResource.POISS_PETIT_RIV -> R.drawable.zaap // TODO
+    MarkerTypeResource.POISS_GEANT_MER -> R.drawable.poisson_mer
+    MarkerTypeResource.POISS_GEANT_RIV -> R.drawable.poisson_riv
+    MarkerTypeResource.POISS_GROS_MER -> R.drawable.poisson_mer
+    MarkerTypeResource.POISS_GROS_RIV -> R.drawable.poisson_riv
+    MarkerTypeResource.POISS_MER -> R.drawable.poisson_mer
+    MarkerTypeResource.POISS_RIV -> R.drawable.poisson_riv
+    MarkerTypeResource.POISS_PETIT_MER -> R.drawable.poisson_mer
+    MarkerTypeResource.POISS_PETIT_RIV -> R.drawable.poisson_riv
 }
 
 fun getTitle(markerType: MarkerTypeResource, qte: Int): String = when (markerType) {

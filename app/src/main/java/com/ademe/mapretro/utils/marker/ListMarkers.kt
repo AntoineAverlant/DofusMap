@@ -3,13 +3,25 @@ package com.ademe.mapretro.utils.marker
 import com.ademe.mapretro.utils.classes.*
 import com.ademe.mapretro.utils.divers.*
 import com.ademe.mapretro.utils.places.*
+import com.ademe.mapretro.utils.resource.abra.resourceAbra
+import com.ademe.mapretro.utils.resource.astrub.*
+import com.ademe.mapretro.utils.resource.brakmar.resourceBrakmar
+import com.ademe.mapretro.utils.resource.koalak.resourceKoalak
+import com.ademe.mapretro.utils.resource.nowell.resourceNowell
+import com.ademe.mapretro.utils.resource.pandala.resourcePandalaAir
+import com.ademe.mapretro.utils.resource.pandala.resourcePandalaEau
+import com.ademe.mapretro.utils.resource.pandala.resourcePandalaFeu
+import com.ademe.mapretro.utils.resource.pandala.resourcePandalaTerre
+import com.ademe.mapretro.utils.resource.sidimote.resourceSidimote
+import com.ademe.mapretro.utils.resource.tainela.resourceTainela
+import com.ademe.mapretro.utils.resource.wabbit.resourceWabbits
 
-val markerDonjons = listOf(markerDonjon)
-val markerZaaps = listOf(markerZaap)
-val markerMines = listOf(markerMine)
-val markerEmotes = listOf(markerEmote)
+val markerDonjons = concatenate(markerDonjon)
+val markerZaaps = concatenate(markerZaap)
+val markerMines = concatenate(markerMine)
+val markerEmotes = concatenate(markerEmote)
 
-val markerAtelierHdv = listOf(
+val markerAtelierHdv = concatenate(
     markerAtelierBouclier,
     markerAtelierBucheron,
     markerAtelierPaysan,
@@ -47,7 +59,7 @@ val markerAtelierHdv = listOf(
     markerHdvCordo
 )
 
-val markerDivers = listOf(
+val markerDivers = concatenate(
     markerArene,
     markerBanque,
     markerBateau,
@@ -69,7 +81,7 @@ val markerDivers = listOf(
     markerTransporteurBrig
 )
 
-val markerClasses = listOf(
+val markerClasses = concatenate(
     markerTempleEca,
     markerStatueEca,
     markerTempleFeca,
@@ -95,3 +107,31 @@ val markerClasses = listOf(
     markerTemplePanda,
     markerStatuePanda
 )
+
+val markerLieuMenu = concatenate(markerClasses, markerDivers, markerAtelierHdv, markerEmotes, markerMines, markerZaaps, markerDonjons)
+
+val markerResources = concatenate(
+    resourceAbra,
+    resourceAstrubChamp,
+    resourceAstrubCite,
+    resourceAstrubContour,
+    resourceAstrubForet,
+    resourceAstrubMine,
+    resourceAstrubRepos,
+    resourceKoalak,
+    resourceBrakmar,
+    resourcePandalaAir,
+    resourcePandalaEau,
+    resourcePandalaFeu,
+    resourcePandalaTerre,
+    resourceNowell,
+    resourceTainela,
+    resourceSidimote,
+    resourceWabbits
+)
+
+val markerBois = markerResources.filter { it -> it.type.contains(MarkerTypeRes.BOIS) }
+val markerMinerais = markerResources.filter { it -> it.type.contains(MarkerTypeRes.MINERAI) }
+val markerCereal = markerResources.filter { it -> it.type.contains(MarkerTypeRes.CEREAL) }
+val markerFleurs = markerResources.filter { it -> it.type.contains(MarkerTypeRes.FLEURS) }
+val markerPoisson = markerResources.filter { it -> it.type.contains(MarkerTypeRes.POISSON) }

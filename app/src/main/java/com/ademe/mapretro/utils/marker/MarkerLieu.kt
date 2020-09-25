@@ -11,7 +11,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlin.math.pow
 
-class Marker(
+class MarkerLieu(
     private val title: Int,
     private val snippet: Int,
     private val positionLong: Int,
@@ -65,22 +65,16 @@ class Marker(
 
 
     private fun generateSmallIcon(@DrawableRes id: Int, context: Context): Bitmap {
-
         val heightWidth = getSize()
         val bitmap = BitmapFactory.decodeResource(context.resources, id)
-        return Bitmap.createScaledBitmap(bitmap, heightWidth.second, heightWidth.first, false)
+        return Bitmap.createScaledBitmap(bitmap, heightWidth, heightWidth, false)
     }
 
-    private fun getSize():Pair<Int, Int> {
-        return when (type) {
-            MarkerType.EMOTE, MarkerType.PHENIX, MarkerType.EGOUTS, MarkerType.MINES -> {
-                Pair(60, 60)
-            }
-            else -> {
-                Pair(75, 75)
-            }
-        }
+    private fun getSize(): Int = when (type) {
+        MarkerType.EMOTE, MarkerType.PHENIX -> 60
+        else -> 75
     }
+
 
     private fun getDrawableRes(): Int = when (type) {
         MarkerType.ZAAP -> R.drawable.zaap
@@ -102,9 +96,9 @@ class Marker(
         MarkerType.ENCLOS -> R.drawable.fence
         MarkerType.CHANIL -> R.drawable.chanil
         MarkerType.EMOTE -> R.drawable.emote
-        MarkerType.EGOUTS -> R.drawable.ladder // TODO
-        MarkerType.PHENIX -> R.drawable.phoenix // TODO
-        MarkerType.MINES -> R.drawable.mine // TODO
+        MarkerType.EGOUTS -> R.drawable.ladder
+        MarkerType.PHENIX -> R.drawable.phenix
+        MarkerType.MINES -> R.drawable.mine
         MarkerType.DONJON -> R.drawable.donjon
 
         MarkerType.PANDA -> R.drawable.pandawa
