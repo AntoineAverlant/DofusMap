@@ -5,13 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import androidx.fragment.app.Fragment
 import com.ademe.mapretro.R
-import com.ademe.mapretro.utils.marker.*
+import com.ademe.mapretro.utils.marker.MarkerTypeRes
+import com.ademe.mapretro.utils.marker.MarkerTypeResource
 import com.ademe.mapretro.view.SelectionListener
 import kotlinx.android.synthetic.main.fragment_poisson.*
 
-class FragmentSelectionPoisson(private var listener: SelectionListener): Fragment() {
+class FragmentSelectionPoisson(private var listener: SelectionListener) : BaseFragment() {
+
+    private var isAllSelected = true
+
     private var pRivActivated = true
     private var rivActivated = true
     private var grRivActivated = true
@@ -21,7 +24,11 @@ class FragmentSelectionPoisson(private var listener: SelectionListener): Fragmen
     private var grMerActivated = true
     private var gMerActivated = true
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_poisson, container, false)
     }
 
@@ -31,58 +38,95 @@ class FragmentSelectionPoisson(private var listener: SelectionListener): Fragmen
     }
 
     private fun setView() {
+        setImageButton(pRivActivated, pRivButton)
+        setImageButton(rivActivated, rivButton)
+        setImageButton(grRivActivated, grRivButton)
+        setImageButton(gRivActivated, gRivButton)
+        setImageButton(pMerActivated, pMerButton)
+        setImageButton(merActivated, merButton)
+        setImageButton(grMerActivated, grMerButton)
+        setImageButton(gMerActivated, gMerButton)
+
         pRivButton.setOnClickListener {
-            pRivActivated = pRivActivated.not()
-            setImageButton(pRivActivated, pRivButton)
-            listener.onResSelected(MarkerTypeResource.POISS_PETIT_RIV, pRivActivated)
+            pRivActivated = select(pRivActivated, pRivButton, MarkerTypeResource.POISS_PETIT_RIV)
+            checkAllSelected()
         }
         rivButton.setOnClickListener {
-            rivActivated = rivActivated.not()
-            setImageButton(rivActivated, rivButton)
-            listener.onResSelected(MarkerTypeResource.POISS_RIV, rivActivated)
+            rivActivated = select(rivActivated, rivButton, MarkerTypeResource.POISS_RIV)
+            checkAllSelected()
         }
         grRivButton.setOnClickListener {
-            grRivActivated = grRivActivated.not()
-            setImageButton(grRivActivated, grRivButton)
-            listener.onResSelected(MarkerTypeResource.POISS_GROS_RIV, grRivActivated)
+            grRivActivated = select(grRivActivated, grRivButton, MarkerTypeResource.POISS_GROS_RIV)
+            checkAllSelected()
         }
         gRivButton.setOnClickListener {
-            gRivActivated = gRivActivated.not()
-            setImageButton(gRivActivated, gRivButton)
-            listener.onResSelected(MarkerTypeResource.POISS_GEANT_RIV, gRivActivated)
+            gRivActivated = select(gRivActivated, gRivButton, MarkerTypeResource.POISS_GEANT_RIV)
+            checkAllSelected()
         }
         pMerButton.setOnClickListener {
-            pMerActivated = pMerActivated.not()
-            setImageButton(pMerActivated, pMerButton)
-            listener.onResSelected(MarkerTypeResource.POISS_PETIT_MER, pMerActivated)
+            pMerActivated = select(pMerActivated, pMerButton, MarkerTypeResource.POISS_PETIT_MER)
+            checkAllSelected()
         }
         merButton.setOnClickListener {
-            merActivated = merActivated.not()
-            setImageButton(merActivated, merButton)
-            listener.onResSelected(MarkerTypeResource.POISS_MER, merActivated)
+            merActivated = select(merActivated, merButton, MarkerTypeResource.POISS_MER)
+            checkAllSelected()
         }
         grMerButton.setOnClickListener {
-            grMerActivated = grMerActivated.not()
-            setImageButton(grMerActivated, grMerButton)
-            listener.onResSelected(MarkerTypeResource.POISS_GROS_RIV, grMerActivated)
+            grMerActivated = select(grMerActivated, grMerButton, MarkerTypeResource.POISS_GROS_RIV)
+            checkAllSelected()
         }
         gMerButton.setOnClickListener {
-            gMerActivated = gMerActivated.not()
-            setImageButton(gMerActivated, gMerButton)
-            listener.onResSelected(MarkerTypeResource.POISS_GEANT_MER, gMerActivated)
+            gMerActivated = select(gMerActivated, gMerButton, MarkerTypeResource.POISS_GEANT_MER)
+            checkAllSelected()
         }
     }
 
-    private fun setImageButton(activated: Boolean, imageButton: ImageButton) {
-        if (activated) {
-            imageButton.clearColorFilter()
+    override fun selectAll() {
+        if (isAllSelected) {
+            setSelectAll(true)
         } else {
-            context?.let {
-                imageButton.setColorFilter(
-                    it.getColor(R.color.colorTint),
-                    android.graphics.PorterDuff.Mode.MULTIPLY
-                )
-            }
+            setSelectAll(false)
         }
+    }
+
+    private fun select(activated: Boolean, button: ImageButton, type: MarkerTypeResource): Boolean {
+        val activate = activated.not()
+        setImageButton(activate, button)
+        listener.onResSelected(MarkerTypeRes.POISSON, type, activate)
+        return activate
+    }
+
+    private fun setSelectAll(boolean: Boolean) {
+        if (pRivActivated == boolean)
+            pRivActivated = select(boolean, pRivButton, MarkerTypeResource.POISS_PETIT_RIV)
+
+        if (rivActivated == boolean)
+            rivActivated = select(boolean, rivButton, MarkerTypeResource.POISS_RIV)
+
+        if (grRivActivated == boolean)
+            grRivActivated = select(boolean, grRivButton, MarkerTypeResource.POISS_GROS_RIV)
+
+        if (gRivActivated == boolean)
+            gRivActivated = select(boolean, gRivButton, MarkerTypeResource.POISS_GEANT_RIV)
+
+        if (pMerActivated == boolean)
+            pMerActivated = select(boolean, pMerButton, MarkerTypeResource.POISS_PETIT_MER)
+
+        if (merActivated == boolean)
+            merActivated = select(boolean, merButton, MarkerTypeResource.POISS_MER)
+
+        if (grMerActivated == boolean)
+            grMerActivated = select(boolean, grMerButton, MarkerTypeResource.POISS_GROS_RIV)
+
+        if (gMerActivated == boolean)
+            gMerActivated = select(boolean, gMerButton, MarkerTypeResource.POISS_GEANT_MER)
+
+        checkAllSelected()
+    }
+
+    private fun checkAllSelected() {
+        isAllSelected =
+            (pRivActivated && rivActivated && grRivActivated && gRivActivated && pMerActivated
+                    && merActivated && grMerActivated && gMerActivated)
     }
 }

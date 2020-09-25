@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import androidx.fragment.app.Fragment
 import com.ademe.mapretro.R
 import com.ademe.mapretro.utils.marker.*
 import com.ademe.mapretro.view.SelectionListener
 import kotlinx.android.synthetic.main.fragment_lieu.*
 
-class FragmentSelectionLieu(private var listener: SelectionListener): Fragment() {
-    private lateinit var mView: View
+class FragmentSelectionLieu(private var listener: SelectionListener) : BaseFragment() {
+
+    private var isAllSelected = true
 
     private var zaapActivated = true
     private var diversActivated = true
@@ -22,7 +22,11 @@ class FragmentSelectionLieu(private var listener: SelectionListener): Fragment()
     private var emoteActivated = true
     private var donjonActivated = true
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_lieu, container, false)
     }
 
@@ -32,53 +36,85 @@ class FragmentSelectionLieu(private var listener: SelectionListener): Fragment()
     }
 
     private fun setView() {
+        setImageButton(zaapActivated, zaapButton)
+        setImageButton(diversActivated, diversButton)
+        setImageButton(minesActivated, mineButton)
+        setImageButton(atelierActivated, atelierButton)
+        setImageButton(classeActivated, classeButton)
+        setImageButton(emoteActivated, emoteButton)
+        setImageButton(donjonActivated, donjonButton)
+
         zaapButton.setOnClickListener {
-            zaapActivated = zaapActivated.not()
-            setImageButton(zaapActivated, zaapButton)
-            listener.onLieuSelected(markerZaaps, zaapActivated)
+            zaapActivated = select(zaapActivated, zaapButton, markerZaaps)
+            checkAllSelected()
         }
         diversButton.setOnClickListener {
-            diversActivated = diversActivated.not()
-            setImageButton(diversActivated, diversButton)
-            listener.onLieuSelected(markerDivers, diversActivated)
+            diversActivated = select(diversActivated, diversButton, markerDivers)
+            checkAllSelected()
         }
         mineButton.setOnClickListener {
-            minesActivated = minesActivated.not()
-            setImageButton(minesActivated, mineButton)
-            listener.onLieuSelected(markerMines, minesActivated)
+            minesActivated = select(minesActivated, mineButton, markerMines)
+            checkAllSelected()
         }
         atelierButton.setOnClickListener {
-            atelierActivated = atelierActivated.not()
-            setImageButton(atelierActivated, atelierButton)
-            listener.onLieuSelected(markerAtelierHdv, atelierActivated)
+            atelierActivated = select(atelierActivated, atelierButton, markerAtelierHdv)
+            checkAllSelected()
         }
         classeButton.setOnClickListener {
-            classeActivated = classeActivated.not()
-            setImageButton(classeActivated, classeButton)
-            listener.onLieuSelected(markerClasses, classeActivated)
+            classeActivated = select(classeActivated, classeButton, markerClasses)
+            checkAllSelected()
         }
         emoteButton.setOnClickListener {
-            emoteActivated = emoteActivated.not()
-            setImageButton(emoteActivated, emoteButton)
-            listener.onLieuSelected(markerEmotes, emoteActivated)
+            emoteActivated = select(emoteActivated, emoteButton, markerEmotes)
+            checkAllSelected()
         }
         donjonButton.setOnClickListener {
-            donjonActivated = donjonActivated.not()
-            setImageButton(donjonActivated, donjonButton)
-            listener.onLieuSelected(markerDonjons, donjonActivated)
+            donjonActivated = select(donjonActivated, donjonButton, markerDonjons)
+            checkAllSelected()
         }
     }
 
-    private fun setImageButton(activated: Boolean, imageButton: ImageButton) {
-        if (activated) {
-            imageButton.clearColorFilter()
+    override fun selectAll() {
+        if (isAllSelected) {
+            setSelectAll(true)
         } else {
-            context?.let {
-                imageButton.setColorFilter(
-                    it.getColor(R.color.colorTint),
-                    android.graphics.PorterDuff.Mode.MULTIPLY
-                )
-            }
+            setSelectAll(false)
         }
+    }
+
+    private fun select(activated: Boolean, button: ImageButton, list: List<MarkerLieu>): Boolean {
+        val activate = activated.not()
+        setImageButton(activate, button)
+        listener.onLieuSelected(list, activate)
+        return activate
+    }
+
+    private fun checkAllSelected() {
+        isAllSelected =
+            zaapActivated && diversActivated && minesActivated && atelierActivated && classeActivated && emoteActivated && donjonActivated
+    }
+
+    private fun setSelectAll(boolean: Boolean) {
+        if (zaapActivated == boolean)
+            zaapActivated = select(boolean, zaapButton, markerZaaps)
+
+        if (diversActivated == boolean)
+            diversActivated = select(boolean, diversButton, markerDivers)
+
+        if (minesActivated == boolean)
+            minesActivated = select(boolean, mineButton, markerMines)
+
+        if (atelierActivated == boolean)
+            atelierActivated = select(boolean, atelierButton, markerAtelierHdv)
+
+        if (classeActivated == boolean)
+            classeActivated = select(boolean, classeButton, markerClasses)
+
+        if (emoteActivated == boolean)
+            emoteActivated = select(boolean, emoteButton, markerEmotes)
+
+        if (donjonActivated == boolean)
+            donjonActivated = select(boolean, donjonButton, markerDonjons)
+        checkAllSelected()
     }
 }

@@ -151,7 +151,7 @@
                 app:layout_constraintTop_toBottomOf="@id/erableButton" />
 
             <ImageButton
-                android:id="@+id/kobaButton"
+                android:id="@+id/chatButton"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="15dp"
@@ -164,7 +164,7 @@
                 app:layout_constraintTop_toBottomOf="@id/erableButton" />
 
             <ImageButton
-                android:id="@+id/bauxiteButton"
+                android:id="@+id/charmeButton"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="15dp"
@@ -173,7 +173,7 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/charme"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/kobaButton"
+                app:layout_constraintStart_toEndOf="@id/chatButton"
                 app:layout_constraintTop_toBottomOf="@id/erableButton" />
 
             <ImageButton
@@ -186,7 +186,7 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/orme"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/bauxiteButton"
+                app:layout_constraintStart_toEndOf="@id/charmeButton"
                 app:layout_constraintTop_toBottomOf="@id/erableButton" />
 
             <ImageButton

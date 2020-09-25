@@ -13,7 +13,6 @@ import com.ademe.mapretro.R
 import com.ademe.mapretro.utils.marker.*
 import com.ademe.mapretro.view.fragment_selection.*
 
-
 class MenuSelection(context: Context, attributeSet: AttributeSet) :
     ConstraintLayout(context, attributeSet), SelectionListener {
 
@@ -93,19 +92,23 @@ class MenuSelection(context: Context, attributeSet: AttributeSet) :
             setView(isBoisEnabled, boisButton)
         }
         mineraisButton.setOnClickListener {
-            isMineraisEnabled = onResButtonClick(isMineraisEnabled, MarkerTypeRes.MINERAI, fragmentMinerais)
+            isMineraisEnabled =
+                onResButtonClick(isMineraisEnabled, MarkerTypeRes.MINERAI, fragmentMinerais)
             setView(isMineraisEnabled, mineraisButton)
         }
         cerealButton.setOnClickListener {
-            isCerealEnabled = onResButtonClick(isCerealEnabled, MarkerTypeRes.CEREAL, fragmentCereal)
+            isCerealEnabled =
+                onResButtonClick(isCerealEnabled, MarkerTypeRes.CEREAL, fragmentCereal)
             setView(isCerealEnabled, cerealButton)
         }
         fleursButton.setOnClickListener {
-            isFleursEnabled = onResButtonClick(isFleursEnabled, MarkerTypeRes.FLEURS, fragmentFleurs)
+            isFleursEnabled =
+                onResButtonClick(isFleursEnabled, MarkerTypeRes.FLEURS, fragmentFleurs)
             setView(isFleursEnabled, fleursButton)
         }
         poissonButton.setOnClickListener {
-            isPoissonEnabled = onResButtonClick(isPoissonEnabled, MarkerTypeRes.POISSON, fragmentPoisson)
+            isPoissonEnabled =
+                onResButtonClick(isPoissonEnabled, MarkerTypeRes.POISSON, fragmentPoisson)
             setView(isPoissonEnabled, poissonButton)
         }
     }
@@ -120,11 +123,14 @@ class MenuSelection(context: Context, attributeSet: AttributeSet) :
     private fun onLieuButtonClick(
         isEnabled: Boolean,
         list: List<MarkerLieu>,
-        fragment: Fragment
+        fragment: BaseFragment
     ): Boolean {
         var isEnable = isEnabled
+
         if (isExpanded && supportFragmentManager.findFragmentById(R.id.fragmentContainer) != fragment) {
             setFragment(fragment)
+        } else if (isExpanded && isEnable) {
+            fragment.selectAll()
         } else {
             isEnable = isEnabled.not()
             onLieuMenuClick(list, isEnable)
@@ -157,7 +163,9 @@ class MenuSelection(context: Context, attributeSet: AttributeSet) :
         } else {
             tmpMarkerLieu.removeAll(list)
         }
-        onLieuMenuClick(list, enabled)
+        if (isLieuEnabled) {
+            onLieuMenuClick(list, enabled)
+        }
     }
 
     // RESOURCES
@@ -181,11 +189,13 @@ class MenuSelection(context: Context, attributeSet: AttributeSet) :
     private fun onResButtonClick(
         isEnabled: Boolean,
         markerTypeRes: MarkerTypeRes,
-        fragment: Fragment
+        fragment: BaseFragment
     ): Boolean {
         var isEnable = isEnabled
         if (isExpanded && supportFragmentManager.findFragmentById(R.id.fragmentContainer) != fragment) {
             setFragment(fragment)
+        } else if (isExpanded && isEnable) {
+            fragment.selectAll()
         } else {
             isEnable = isEnabled.not()
             if (listTypeMarkerRes.contains(markerTypeRes)) {
@@ -200,18 +210,29 @@ class MenuSelection(context: Context, attributeSet: AttributeSet) :
     }
 
     override fun onResSelected(
+        markerTypeRes: MarkerTypeRes,
         markerTypeResource: MarkerTypeResource,
         enabled: Boolean
     ) {
-        if(enabled) {
+        val list = if (enabled) {
             val list = calculateListResource(markerTypeResource)
             listTypeMarkerResource.add(markerTypeResource)
             tmpMarkerRes.addAll(list)
-            onResMenuClick(list, enabled)
+            list
         } else {
             listTypeMarkerResource.remove(markerTypeResource)
             val list = calculateListResource(markerTypeResource)
             tmpMarkerRes.removeAll(list)
+            list
+        }
+        val isActivate = when (markerTypeRes) {
+            MarkerTypeRes.MINERAI -> isMineraisEnabled
+            MarkerTypeRes.CEREAL -> isCerealEnabled
+            MarkerTypeRes.BOIS -> isBoisEnabled
+            MarkerTypeRes.FLEURS -> isFleursEnabled
+            MarkerTypeRes.POISSON -> isPoissonEnabled
+        }
+        if (isActivate) {
             onResMenuClick(list, enabled)
         }
     }

@@ -5,13 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import androidx.fragment.app.Fragment
 import com.ademe.mapretro.R
-import com.ademe.mapretro.utils.marker.*
+import com.ademe.mapretro.utils.marker.MarkerTypeRes
+import com.ademe.mapretro.utils.marker.MarkerTypeResource
 import com.ademe.mapretro.view.SelectionListener
 import kotlinx.android.synthetic.main.fragment_bois.*
 
-class FragmentSelectionBois(private var listener: SelectionListener): Fragment() {
+class FragmentSelectionBois(private var listener: SelectionListener) : BaseFragment() {
+
+    private var isAllSelected = true
 
     private var kaliptusActivated = true
     private var bombuActivated = true
@@ -30,7 +32,11 @@ class FragmentSelectionBois(private var listener: SelectionListener): Fragment()
     private var cheneActivated = true
     private var charmeActivated = true
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_bois, container, false)
     }
 
@@ -40,98 +46,170 @@ class FragmentSelectionBois(private var listener: SelectionListener): Fragment()
     }
 
     private fun setView() {
+        setImageButton(kaliptusActivated, kaliptusButton)
+        setImageButton(bombuActivated, bombuButton)
+        setImageButton(erableActivated, erableButton)
+        setImageButton(freneActivated, freneButton)
+        setImageButton(bambouSacreActivated, bambouSacreButton)
+        setImageButton(bambouSombreActivated, bambouSombreButton)
+        setImageButton(bambouActivated, bambouButton)
+        setImageButton(olivioletActivated, olivioletButton)
+        setImageButton(merisierActivated, merisierButton)
+        setImageButton(noyerActivated, noyerButton)
+        setImageButton(chataignerActivated, chatButton)
+        setImageButton(ormeActivated, ormeButton)
+        setImageButton(ebeneActivated, ebeneButton)
+        setImageButton(ifActivated, ifButton)
+        setImageButton(cheneActivated, cheneButton)
+        setImageButton(charmeActivated, charmeButton)
+
+
+
         kaliptusButton.setOnClickListener {
-            kaliptusActivated = kaliptusActivated.not()
-            setImageButton(kaliptusActivated, kaliptusButton)
-            listener.onResSelected(MarkerTypeResource.KALIPTUS, kaliptusActivated)
+            kaliptusActivated =
+                select(kaliptusActivated, kaliptusButton, MarkerTypeResource.KALIPTUS)
+            checkAllSelected()
         }
         bombuButton.setOnClickListener {
-            bombuActivated = bombuActivated.not()
-            setImageButton(bombuActivated, bombuButton)
-            listener.onResSelected(MarkerTypeResource.BOMBU, bombuActivated)
+            bombuActivated = select(bombuActivated, bombuButton, MarkerTypeResource.BOMBU)
+            checkAllSelected()
         }
         erableButton.setOnClickListener {
-            erableActivated = erableActivated.not()
-            setImageButton(erableActivated, erableButton)
-            listener.onResSelected(MarkerTypeResource.ERABLE, erableActivated)
+            erableActivated = select(erableActivated, erableButton, MarkerTypeResource.ERABLE)
+            checkAllSelected()
         }
         freneButton.setOnClickListener {
-            freneActivated = freneActivated.not()
-            setImageButton(freneActivated, freneButton)
-            listener.onResSelected(MarkerTypeResource.FRENE, freneActivated)
+            freneActivated = select(freneActivated, freneButton, MarkerTypeResource.FRENE)
+            checkAllSelected()
         }
         bambouSacreButton.setOnClickListener {
-            bambouSacreActivated = bambouSacreActivated.not()
-            setImageButton(bambouSacreActivated, bambouSacreButton)
-            listener.onResSelected(MarkerTypeResource.BAMBOU_SACRE, bambouSacreActivated)
+            bambouSacreActivated =
+                select(bambouSacreActivated, bambouSacreButton, MarkerTypeResource.BAMBOU_SACRE)
+            checkAllSelected()
         }
         bambouSombreButton.setOnClickListener {
-            bambouSombreActivated = bambouSombreActivated.not()
-            setImageButton(bambouSombreActivated, bambouSombreButton)
-            listener.onResSelected(MarkerTypeResource.BAMBOU_SOMBRE, bambouSombreActivated)
+            bambouSombreActivated =
+                select(bambouSombreActivated, bambouSombreButton, MarkerTypeResource.BAMBOU_SOMBRE)
+            checkAllSelected()
         }
         bambouButton.setOnClickListener {
-            bambouActivated = bambouActivated.not()
-            setImageButton(bambouActivated, bambouButton)
-            listener.onResSelected(MarkerTypeResource.BAMBOU, bambouActivated)
+            bambouActivated = select(bambouActivated, bambouButton, MarkerTypeResource.BAMBOU)
+            checkAllSelected()
         }
         olivioletButton.setOnClickListener {
-            olivioletActivated = olivioletActivated.not()
-            setImageButton(olivioletActivated, olivioletButton)
-            listener.onResSelected(MarkerTypeResource.OLIVIOLET, olivioletActivated)
+            olivioletActivated =
+                select(olivioletActivated, olivioletButton, MarkerTypeResource.OLIVIOLET)
+            checkAllSelected()
         }
         merisierButton.setOnClickListener {
-            merisierActivated = merisierActivated.not()
-            setImageButton(merisierActivated, merisierButton)
-            listener.onResSelected(MarkerTypeResource.MERISIER, merisierActivated)
+            merisierActivated =
+                select(merisierActivated, merisierButton, MarkerTypeResource.MERISIER)
+            checkAllSelected()
         }
         noyerButton.setOnClickListener {
-            noyerActivated = noyerActivated.not()
-            setImageButton(noyerActivated, noyerButton)
-            listener.onResSelected(MarkerTypeResource.NOYER, noyerActivated)
+            noyerActivated = select(noyerActivated, noyerButton, MarkerTypeResource.NOYER)
+            checkAllSelected()
         }
-        kobaButton.setOnClickListener {
-            chataignerActivated = chataignerActivated.not()
-            setImageButton(chataignerActivated, kobaButton)
-            listener.onResSelected(MarkerTypeResource.CHATAIGNIER, chataignerActivated)
+        chatButton.setOnClickListener {
+            chataignerActivated =
+                select(chataignerActivated, chatButton, MarkerTypeResource.CHATAIGNIER)
+            checkAllSelected()
         }
         ormeButton.setOnClickListener {
-            ormeActivated = ormeActivated.not()
-            setImageButton(ormeActivated, ormeButton)
-            listener.onResSelected(MarkerTypeResource.ORME, ormeActivated)
+            ormeActivated = select(ormeActivated, ormeButton, MarkerTypeResource.ORME)
+            checkAllSelected()
         }
         ebeneButton.setOnClickListener {
-            ebeneActivated = ebeneActivated.not()
-            setImageButton(ebeneActivated, ebeneButton)
-            listener.onResSelected(MarkerTypeResource.EBENE, ebeneActivated)
+            ebeneActivated = select(ebeneActivated, ebeneButton, MarkerTypeResource.EBENE)
+            checkAllSelected()
         }
         ifButton.setOnClickListener {
-            ifActivated = ifActivated.not()
-            setImageButton(ifActivated, ifButton)
-            listener.onResSelected(MarkerTypeResource.IF, ifActivated)
+            ifActivated = select(ifActivated, ifButton, MarkerTypeResource.IF)
+            checkAllSelected()
         }
         cheneButton.setOnClickListener {
-            cheneActivated = cheneActivated.not()
-            setImageButton(cheneActivated, cheneButton)
-            listener.onResSelected(MarkerTypeResource.CHENE, cheneActivated)
+            cheneActivated = select(cheneActivated, cheneButton, MarkerTypeResource.CHENE)
+            checkAllSelected()
         }
-        bauxiteButton.setOnClickListener {
-            charmeActivated = charmeActivated.not()
-            setImageButton(charmeActivated, bauxiteButton)
-            listener.onResSelected(MarkerTypeResource.CHARME, charmeActivated)
+        charmeButton.setOnClickListener {
+            charmeActivated = select(charmeActivated, charmeButton, MarkerTypeResource.CHARME)
+            checkAllSelected()
         }
     }
 
-    private fun setImageButton(activated: Boolean, imageButton: ImageButton) {
-        if (activated) {
-            imageButton.clearColorFilter()
+    override fun selectAll() {
+        if (isAllSelected) {
+            setSelectAll(true)
         } else {
-            context?.let {
-                imageButton.setColorFilter(
-                    it.getColor(R.color.colorTint),
-                    android.graphics.PorterDuff.Mode.MULTIPLY
-                )
-            }
+            setSelectAll(false)
         }
+    }
+
+    private fun select(activated: Boolean, button: ImageButton, type: MarkerTypeResource): Boolean {
+        val activate = activated.not()
+        setImageButton(activate, button)
+        listener.onResSelected(MarkerTypeRes.BOIS, type, activate)
+        return activate
+    }
+
+    private fun checkAllSelected() {
+        isAllSelected =
+            kaliptusActivated && bombuActivated && erableActivated && freneActivated && bambouSacreActivated
+                    && bambouSombreActivated && bambouActivated && olivioletActivated && merisierActivated
+                    && noyerActivated && chataignerActivated && ormeActivated && ebeneActivated && ifActivated
+                    && cheneActivated && charmeActivated
+    }
+
+    private fun setSelectAll(boolean: Boolean) {
+        if (kaliptusActivated == boolean)
+            kaliptusActivated = select(boolean, kaliptusButton, MarkerTypeResource.KALIPTUS)
+
+        if (bombuActivated == boolean)
+            bombuActivated = select(boolean, bombuButton, MarkerTypeResource.BOMBU)
+
+        if (erableActivated == boolean)
+            erableActivated = select(boolean, erableButton, MarkerTypeResource.ERABLE)
+
+        if (freneActivated == boolean)
+            freneActivated = select(boolean, freneButton, MarkerTypeResource.FRENE)
+
+        if (bambouSacreActivated == boolean)
+            bambouSacreActivated =
+                select(boolean, bambouSacreButton, MarkerTypeResource.BAMBOU_SACRE)
+
+        if (bambouSombreActivated == boolean)
+            bambouSombreActivated =
+                select(boolean, bambouSombreButton, MarkerTypeResource.BAMBOU_SOMBRE)
+
+        if (bambouActivated == boolean)
+            bambouActivated = select(boolean, bambouButton, MarkerTypeResource.BAMBOU)
+
+        if (olivioletActivated == boolean)
+            olivioletActivated = select(boolean, olivioletButton, MarkerTypeResource.OLIVIOLET)
+
+        if (merisierActivated == boolean)
+            merisierActivated = select(boolean, merisierButton, MarkerTypeResource.MERISIER)
+
+        if (noyerActivated == boolean)
+            noyerActivated = select(boolean, noyerButton, MarkerTypeResource.NOYER)
+
+        if (chataignerActivated == boolean)
+            chataignerActivated = select(boolean, chatButton, MarkerTypeResource.CHATAIGNIER)
+
+        if (ormeActivated == boolean)
+            ormeActivated = select(boolean, ormeButton, MarkerTypeResource.ORME)
+
+        if (ebeneActivated == boolean)
+            ebeneActivated = select(boolean, ebeneButton, MarkerTypeResource.EBENE)
+
+        if (ifActivated == boolean)
+            ifActivated = select(boolean, ifButton, MarkerTypeResource.IF)
+
+        if (cheneActivated == boolean)
+            cheneActivated = select(boolean, cheneButton, MarkerTypeResource.CHENE)
+
+        if (charmeActivated == boolean)
+            charmeActivated = select(boolean, charmeButton, MarkerTypeResource.CHARME)
+        checkAllSelected()
     }
 }

@@ -7,5 +7,5 @@ import com.ademe.mapretro.utils.marker.MarkerTypeResource
 interface SelectionListener {
     fun onLieuSelected(list: List<MarkerLieu>, enabled: Boolean)
 
-    fun onResSelected(markerTypeResource: MarkerTypeResource, enabled: Boolean)
+    fun onResSelected(markerTypeRes: MarkerTypeRes, markerTypeResource: MarkerTypeResource, enabled: Boolean)
 }
