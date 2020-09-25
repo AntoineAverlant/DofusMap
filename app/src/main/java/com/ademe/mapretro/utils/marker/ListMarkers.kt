@@ -130,8 +130,61 @@ val markerResources = concatenate(
     resourceWabbits
 )
 
-val markerBois = markerResources.filter { it -> it.type.contains(MarkerTypeRes.BOIS) }
-val markerMinerais = markerResources.filter { it -> it.type.contains(MarkerTypeRes.MINERAI) }
-val markerCereal = markerResources.filter { it -> it.type.contains(MarkerTypeRes.CEREAL) }
-val markerFleurs = markerResources.filter { it -> it.type.contains(MarkerTypeRes.FLEURS) }
-val markerPoisson = markerResources.filter { it -> it.type.contains(MarkerTypeRes.POISSON) }
+var listTypeMarkerRes = mutableListOf(
+    MarkerTypeRes.BOIS,
+    MarkerTypeRes.MINERAI,
+    MarkerTypeRes.FLEURS,
+    MarkerTypeRes.POISSON,
+    MarkerTypeRes.CEREAL
+)
+var listTypeMarkerResource = mutableListOf(
+    MarkerTypeResource.PANDOUILLE,
+    MarkerTypeResource.ORCHIDEE,
+    MarkerTypeResource.TREFLE,
+    MarkerTypeResource.MENTHE,
+    MarkerTypeResource.EDELWEISS,
+    MarkerTypeResource.POISS_GEANT_MER,
+    MarkerTypeResource.POISS_GEANT_RIV,
+    MarkerTypeResource.POISS_GROS_MER,
+    MarkerTypeResource.POISS_GROS_RIV,
+    MarkerTypeResource.POISS_MER,
+    MarkerTypeResource.POISS_RIV,
+    MarkerTypeResource.POISS_PETIT_MER,
+    MarkerTypeResource.POISS_PETIT_RIV,
+    MarkerTypeResource.RIZ,
+    MarkerTypeResource.ORGE,
+    MarkerTypeResource.MALT,
+    MarkerTypeResource.LIN,
+    MarkerTypeResource.CHANVRE,
+    MarkerTypeResource.HOUBLON,
+    MarkerTypeResource.AVOINE,
+    MarkerTypeResource.BLE,
+    MarkerTypeResource.SEIGLE,
+    MarkerTypeResource.MANGANESE,
+    MarkerTypeResource.PIERRE_CUIVREE,
+    MarkerTypeResource.ARGENT,
+    MarkerTypeResource.SILICATE,
+    MarkerTypeResource.ETAIN,
+    MarkerTypeResource.FER,
+    MarkerTypeResource.DOLOMITE,
+    MarkerTypeResource.PIERRE_KOBALTE,
+    MarkerTypeResource.BRONZE,
+    MarkerTypeResource.PIERRE_BAUXITE,
+    MarkerTypeResource.OR,
+    MarkerTypeResource.KALIPTUS,
+    MarkerTypeResource.BOMBU,
+    MarkerTypeResource.ERABLE,
+    MarkerTypeResource.FRENE,
+    MarkerTypeResource.BAMBOU_SACRE,
+    MarkerTypeResource.BAMBOU_SOMBRE,
+    MarkerTypeResource.BAMBOU,
+    MarkerTypeResource.OLIVIOLET,
+    MarkerTypeResource.MERISIER,
+    MarkerTypeResource.NOYER,
+    MarkerTypeResource.CHATAIGNIER,
+    MarkerTypeResource.CHARME,
+    MarkerTypeResource.ORME,
+    MarkerTypeResource.EBENE,
+    MarkerTypeResource.IF,
+    MarkerTypeResource.CHENE
+)

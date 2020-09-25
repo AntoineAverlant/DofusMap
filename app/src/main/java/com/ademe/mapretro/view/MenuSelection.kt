@@ -3,31 +3,59 @@ package com.ademe.mapretro.view
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.ImageButton
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.ademe.mapretro.R
-import com.ademe.mapretro.utils.map.MarkerMapType
+import com.ademe.mapretro.utils.marker.*
+import com.ademe.mapretro.view.fragment_selection.*
+
 
 class MenuSelection(context: Context, attributeSet: AttributeSet) :
-    ConstraintLayout(context, attributeSet) {
+    ConstraintLayout(context, attributeSet), SelectionListener {
 
-    private var zaapActivated = false
-    private var diversActivated = false
-    private var minesActivated = false
-    private var atelierActivated = false
-    private var classeActivated = false
-    private var emoteActivated = false
-    private var donjonActivated = false
+    private var tmpMarkerLieu = markerLieuMenu
 
-    private var zaapButton: ImageButton
-    private var diversButton: ImageButton
-    private var mineButton: ImageButton
-    private var atelierButton: ImageButton
-    private var classeButton: ImageButton
-    private var emoteButton: ImageButton
-    private var donjonButton: ImageButton
+    private var tmpMarkerRes = markerResources.toMutableList()
+    private val fragmentLieu =
+        FragmentSelectionLieu(this)
+    private val fragmentBois =
+        FragmentSelectionBois(this)
+    private val fragmentMinerais =
+        FragmentSelectionMinerais(this)
+    private val fragmentCereal =
+        FragmentSelectionCereal(this)
+    private val fragmentFleurs =
+        FragmentSelectionFleurs(this)
+    private val fragmentPoisson =
+        FragmentSelectionPoisson(this)
 
-    var onMenuClick: (MarkerMapType, Boolean) -> Unit = { _, _ -> }
+    private var isExpanded = false
+
+    private var isLieuEnabled = true
+    private var isBoisEnabled = true
+    private var isMineraisEnabled = true
+    private var isCerealEnabled = true
+    private var isFleursEnabled = true
+    private var isPoissonEnabled = true
+
+    private var fragmentContainer: FrameLayout
+    private var lieuButton: ImageButton
+    private var boisButton: ImageButton
+    private var mineraisButton: ImageButton
+    private var cerealButton: ImageButton
+    private var fleursButton: ImageButton
+    private var poissonButton: ImageButton
+    private var toggle: ImageButton
+
+    private lateinit var supportFragmentManager: FragmentManager
+
+    var onLieuMenuClick: (List<MarkerLieu>, Boolean) -> Unit = { _, _ -> }
+
+    var onResMenuClick: (List<MarkerRes>, Boolean) -> Unit = { _, _ -> }
 
     init {
         View.inflate(
@@ -35,92 +63,81 @@ class MenuSelection(context: Context, attributeSet: AttributeSet) :
             R.layout.menu_selection, this
         )
 
-        zaapButton = findViewById(R.id.zaapButton)
-        diversButton = findViewById(R.id.diversButton)
-        mineButton = findViewById(R.id.mineButton)
-        atelierButton = findViewById(R.id.atelierButton)
-        classeButton = findViewById(R.id.classeButton)
-        emoteButton = findViewById(R.id.emoteButton)
-        donjonButton = findViewById(R.id.donjonButton)
+        fragmentContainer = findViewById(R.id.fragmentContainer)
+        lieuButton = findViewById(R.id.lieuButton)
+        boisButton = findViewById(R.id.boisButton)
+        mineraisButton = findViewById(R.id.mineraisButton)
+        cerealButton = findViewById(R.id.cerealButton)
+        fleursButton = findViewById(R.id.fleursButton)
+        poissonButton = findViewById(R.id.poissonButton)
+        toggle = findViewById(R.id.toggle)
 
-        zaapButton.setOnClickListener {
-            emoteActivated = emoteActivated.not()
-            setView()
-            onMenuClick(MarkerMapType.EMOTE, emoteActivated)
+        toggle.setOnClickListener {
+            isExpanded = isExpanded.not()
+            if (isExpanded) {
+                toggle.rotation = 0F
+                fragmentContainer.visibility = View.VISIBLE
+            } else {
+                toggle.rotation = 180F
+                fragmentContainer.visibility = View.GONE
+            }
         }
 
-        zaapButton.setOnClickListener {
-            zaapActivated = zaapActivated.not()
-            setView()
-            onMenuClick(MarkerMapType.ZAAPS, zaapActivated)
+        lieuButton.setOnClickListener {
+            isLieuEnabled = onLieuButtonClick(isLieuEnabled, tmpMarkerLieu, fragmentLieu)
+            setView(isLieuEnabled, lieuButton)
         }
 
-        diversButton.setOnClickListener {
-            diversActivated = diversActivated.not()
-            setView()
-            onMenuClick(MarkerMapType.DIVERS, diversActivated)
+        boisButton.setOnClickListener {
+            isBoisEnabled = onResButtonClick(isBoisEnabled, MarkerTypeRes.BOIS, fragmentBois)
+            setView(isBoisEnabled, boisButton)
         }
-
-        mineButton.setOnClickListener {
-            minesActivated = minesActivated.not()
-            setView()
-            onMenuClick(MarkerMapType.MINES, minesActivated)
+        mineraisButton.setOnClickListener {
+            isMineraisEnabled = onResButtonClick(isMineraisEnabled, MarkerTypeRes.MINERAI, fragmentMinerais)
+            setView(isMineraisEnabled, mineraisButton)
         }
-
-        atelierButton.setOnClickListener {
-            atelierActivated = atelierActivated.not()
-            setView()
-            onMenuClick(MarkerMapType.ATELIER_HDV, atelierActivated)
+        cerealButton.setOnClickListener {
+            isCerealEnabled = onResButtonClick(isCerealEnabled, MarkerTypeRes.CEREAL, fragmentCereal)
+            setView(isCerealEnabled, cerealButton)
         }
-
-        classeButton.setOnClickListener {
-            classeActivated = classeActivated.not()
-            setView()
-            onMenuClick(MarkerMapType.CLASSES, classeActivated)
+        fleursButton.setOnClickListener {
+            isFleursEnabled = onResButtonClick(isFleursEnabled, MarkerTypeRes.FLEURS, fragmentFleurs)
+            setView(isFleursEnabled, fleursButton)
         }
-
-        emoteButton.setOnClickListener {
-            emoteActivated = emoteActivated.not()
-            setView()
-            onMenuClick(MarkerMapType.EMOTE, emoteActivated)
-        }
-
-        donjonButton.setOnClickListener {
-            donjonActivated = donjonActivated.not()
-            setView()
-            onMenuClick(MarkerMapType.DONJONS, donjonActivated)
+        poissonButton.setOnClickListener {
+            isPoissonEnabled = onResButtonClick(isPoissonEnabled, MarkerTypeRes.POISSON, fragmentPoisson)
+            setView(isPoissonEnabled, poissonButton)
         }
     }
 
 
-    fun init(
-        zaapActivated: Boolean = false,
-        diversActivated: Boolean = false,
-        minesActivated: Boolean = false,
-        atelierActivated: Boolean = false,
-        classeActivated: Boolean = false,
-        donjonActivated: Boolean = false,
-        emoteActivated: Boolean = false
-    ) {
-        this.zaapActivated = zaapActivated
-        this.diversActivated = diversActivated
-        this.minesActivated = minesActivated
-        this.atelierActivated = atelierActivated
-        this.classeActivated = classeActivated
-        this.emoteActivated = emoteActivated
-        this.donjonActivated = donjonActivated
-
-        setView()
+    fun init(supportFragmentManager: FragmentManager) {
+        this.supportFragmentManager = supportFragmentManager
+        setFragment(fragmentLieu)
     }
 
-    private fun setView() {
-        setView(zaapActivated, zaapButton)
-        setView(diversActivated, diversButton)
-        setView(minesActivated, mineButton)
-        setView(atelierActivated, atelierButton)
-        setView(classeActivated, classeButton)
-        setView(emoteActivated, emoteButton)
-        setView(donjonActivated, donjonButton)
+
+    private fun onLieuButtonClick(
+        isEnabled: Boolean,
+        list: List<MarkerLieu>,
+        fragment: Fragment
+    ): Boolean {
+        var isEnable = isEnabled
+        if (isExpanded && supportFragmentManager.findFragmentById(R.id.fragmentContainer) != fragment) {
+            setFragment(fragment)
+        } else {
+            isEnable = isEnabled.not()
+            onLieuMenuClick(list, isEnable)
+        }
+        return isEnable
+    }
+
+    private fun setFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction().apply {
+            setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+            replace(R.id.fragmentContainer, fragment)
+            commit()
+        }
     }
 
     private fun setView(activated: Boolean, imageButton: ImageButton) {
@@ -131,6 +148,71 @@ class MenuSelection(context: Context, attributeSet: AttributeSet) :
                 context.getColor(R.color.colorTint),
                 android.graphics.PorterDuff.Mode.MULTIPLY
             )
+        }
+    }
+
+    override fun onLieuSelected(list: List<MarkerLieu>, enabled: Boolean) {
+        if (enabled) {
+            tmpMarkerLieu.addAll(list)
+        } else {
+            tmpMarkerLieu.removeAll(list)
+        }
+        onLieuMenuClick(list, enabled)
+    }
+
+    // RESOURCES
+
+    private fun calculateListRes(markerTypeRes: MarkerTypeRes): List<MarkerRes> {
+        return tmpMarkerRes.filter {
+            it.type.contains(markerTypeRes) && it.type.intersect(
+                listTypeMarkerRes.asIterable()
+            ).isEmpty()
+        }
+    }
+
+    private fun calculateListResource(markerTypeRes: MarkerTypeResource): List<MarkerRes> {
+        return markerResources.filter {
+            it.hashMapTypeQte.keys.contains(markerTypeRes) && it.hashMapTypeQte.keys.intersect(
+                listTypeMarkerResource.asIterable()
+            ).isEmpty()
+        }
+    }
+
+    private fun onResButtonClick(
+        isEnabled: Boolean,
+        markerTypeRes: MarkerTypeRes,
+        fragment: Fragment
+    ): Boolean {
+        var isEnable = isEnabled
+        if (isExpanded && supportFragmentManager.findFragmentById(R.id.fragmentContainer) != fragment) {
+            setFragment(fragment)
+        } else {
+            isEnable = isEnabled.not()
+            if (listTypeMarkerRes.contains(markerTypeRes)) {
+                listTypeMarkerRes.remove(markerTypeRes)
+                onResMenuClick(calculateListRes(markerTypeRes), isEnable)
+            } else {
+                onResMenuClick(calculateListRes(markerTypeRes), isEnable)
+                listTypeMarkerRes.add(markerTypeRes)
+            }
+        }
+        return isEnable
+    }
+
+    override fun onResSelected(
+        markerTypeResource: MarkerTypeResource,
+        enabled: Boolean
+    ) {
+        if(enabled) {
+            val list = calculateListResource(markerTypeResource)
+            listTypeMarkerResource.add(markerTypeResource)
+            tmpMarkerRes.addAll(list)
+            onResMenuClick(list, enabled)
+        } else {
+            listTypeMarkerResource.remove(markerTypeResource)
+            val list = calculateListResource(markerTypeResource)
+            tmpMarkerRes.removeAll(list)
+            onResMenuClick(list, enabled)
         }
     }
 }

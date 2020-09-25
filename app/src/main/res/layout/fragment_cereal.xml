@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/bleButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ble"
+                app:layout_constraintBottom_toTopOf="@id/houblonButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/orgeButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/orge"
+                app:layout_constraintBottom_toTopOf="@id/houblonButton"
+                app:layout_constraintStart_toEndOf="@id/bleButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/chanvreButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/chanvre"
+                app:layout_constraintBottom_toTopOf="@id/houblonButton"
+                app:layout_constraintStart_toEndOf="@id/orgeButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/linButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/lin"
+                app:layout_constraintBottom_toTopOf="@id/houblonButton"
+                app:layout_constraintStart_toEndOf="@id/chanvreButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/maltButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/malt"
+                app:layout_constraintBottom_toTopOf="@id/houblonButton"
+                app:layout_constraintStart_toEndOf="@id/linButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/houblonButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/houblon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bleButton" />
+
+            <ImageButton
+                android:id="@+id/avoineButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/avoine"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/houblonButton"
+                app:layout_constraintTop_toBottomOf="@id/bleButton" />
+
+            <ImageButton
+                android:id="@+id/seigleButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/seigle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/avoineButton"
+                app:layout_constraintTop_toBottomOf="@id/bleButton" />
+
+
+
+            <ImageButton
+                android:id="@+id/rizButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/riz"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/seigleButton"
+                app:layout_constraintTop_toBottomOf="@id/bleButton" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,17 +28,10 @@ class ListMapMarker {
         }
     }
 
-    private fun clearListRes(listMarker: List<MarkerRes>) {
+    fun clearListRes(listMarker: List<MarkerRes>) {
         listMarker.forEach {
             mapMarkerRes[it]?.remove()
             mapMarkerRes.remove(it)
         }
-    }
-
-    private fun clearList(listMarker: MutableList<Marker>) {
-        listMarker.forEach {
-            it.remove()
-        }
-        listMarker.clear()
     }
 }

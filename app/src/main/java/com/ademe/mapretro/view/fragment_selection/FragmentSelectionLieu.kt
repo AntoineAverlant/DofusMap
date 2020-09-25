@@ -1,4 +1,4 @@
-package com.ademe.mapretro.view
+package com.ademe.mapretro.view.fragment_selection
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import com.ademe.mapretro.R
 import com.ademe.mapretro.utils.marker.*
+import com.ademe.mapretro.view.SelectionListener
 import kotlinx.android.synthetic.main.fragment_lieu.*
 
 class FragmentSelectionLieu(private var listener: SelectionListener): Fragment() {

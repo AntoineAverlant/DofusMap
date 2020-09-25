@@ -26,8 +26,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var vm: MapActivityViewModel
     private lateinit var mMap: GoogleMap
     private lateinit var tiles: TileOverlay
-
-    // lists marker
     private val listMapMarker = ListMapMarker()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +41,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         menuSelection.onLieuMenuClick = { listMarkerLieu, enabled ->
             vm.setMarkerLieu(listMarkerLieu, enabled)
         }
+
+        menuSelection.onResMenuClick = { listMarkerLieu, enabled ->
+            vm.setMarkerRes(listMarkerLieu, enabled)
+        }
+
 
         setObservables()
     }
@@ -109,6 +112,22 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 listMapMarker.clearLieuMarker(listMarker)
             }
         })
+
+        vm.listMarkerRes.observe(this, Observer { pairMarkerEnabled ->
+            val listMarker = pairMarkerEnabled.first
+            val enabled = pairMarkerEnabled.second
+            if (enabled) {
+                addListMarkerRes(listMarker)
+            } else {
+                listMapMarker.clearListRes(listMarker)
+            }
+        })
+    }
+
+    private fun addListMarkerRes(markerList: List<MarkerRes>) {
+        markerList.forEach {
+            listMapMarker.addResMarker(it, mMap.addMarker(it.getMarkerOptions(this)))
+        }
     }
 
     private fun addListMarker(markerList: List<MarkerLieu>) {
@@ -117,34 +136,3 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 }
-
-/*
-private fun listMarker(isMarkerEnabled: Boolean, markerType: MarkerMenuMapType) {
-        if (isMarkerEnabled) {
-            when (markerType) {
-                MarkerMenuMapType.LIEU_MENU -> addListMarker(markerLieuMenu, markerType)
-                MarkerMenuMapType.BOIS_MENU -> addListResMarker(markerBois, markerType)
-                MarkerMenuMapType.CEREAL_MENU -> addListResMarker(markerCereal, markerType)
-                MarkerMenuMapType.MINERAIS_MENU -> addListResMarker(markerMinerais, markerType)
-                MarkerMenuMapType.FLEURS_MENU -> addListResMarker(markerFleurs, markerType)
-                MarkerMenuMapType.POISSONS_MENU -> addListResMarker(markerPoisson, markerType)
-            }
-        } else {
-            listMapMarker.clearListMarker(markerType)
-        }
-    }
-
-    private fun addListMarker(markerList: List<List<Marker>>, type: MarkerMenuMapType) {
-        markerList.forEach { list ->
-            list.forEach {
-                listMapMarker.addMapMarker(type, mMap.addMarker(it.getMarkerOptions(this)))
-            }
-        }
-    }
-
-    private fun addListResMarker(markerList: List<MarkerRes>, type: MarkerMenuMapType) {
-        markerList.forEach {
-            listMapMarker.addResMarker(it, mMap.addMarker(it.getMarkerOptions(this)))
-        }
-    }
- */

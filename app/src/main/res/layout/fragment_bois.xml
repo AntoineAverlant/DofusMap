@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/kaliptusButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/kaliptus"
+                app:layout_constraintBottom_toTopOf="@id/merisierButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/bombuButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/bombu"
+                app:layout_constraintBottom_toTopOf="@id/merisierButton"
+                app:layout_constraintStart_toEndOf="@id/kaliptusButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/erableButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/erable"
+                app:layout_constraintBottom_toTopOf="@id/merisierButton"
+                app:layout_constraintStart_toEndOf="@id/bombuButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/freneButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/frene"
+                app:layout_constraintBottom_toTopOf="@id/merisierButton"
+                app:layout_constraintStart_toEndOf="@id/erableButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/bambouSacreButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/bambou_sacre"
+                app:layout_constraintBottom_toTopOf="@id/merisierButton"
+                app:layout_constraintStart_toEndOf="@id/freneButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/bambouSombreButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/bambou_sombre"
+                app:layout_constraintBottom_toTopOf="@id/merisierButton"
+                app:layout_constraintStart_toEndOf="@id/bambouSacreButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/bambouButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/bambou"
+                app:layout_constraintBottom_toTopOf="@id/merisierButton"
+                app:layout_constraintStart_toEndOf="@id/bambouSombreButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/olivioletButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/oliviolet"
+                app:layout_constraintBottom_toTopOf="@id/merisierButton"
+                app:layout_constraintStart_toEndOf="@id/bambouButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/merisierButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/merisier"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/erableButton" />
+
+            <ImageButton
+                android:id="@+id/noyerButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/noyer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/merisierButton"
+                app:layout_constraintTop_toBottomOf="@id/erableButton" />
+
+            <ImageButton
+                android:id="@+id/kobaButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/chataignier"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/noyerButton"
+                app:layout_constraintTop_toBottomOf="@id/erableButton" />
+
+            <ImageButton
+                android:id="@+id/bauxiteButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/charme"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/kobaButton"
+                app:layout_constraintTop_toBottomOf="@id/erableButton" />
+
+            <ImageButton
+                android:id="@+id/ormeButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/orme"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/bauxiteButton"
+                app:layout_constraintTop_toBottomOf="@id/erableButton" />
+
+            <ImageButton
+                android:id="@+id/ebeneButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ebene"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ormeButton"
+                app:layout_constraintTop_toBottomOf="@id/erableButton" />
+
+            <ImageButton
+                android:id="@+id/ifButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/iif"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ebeneButton"
+                app:layout_constraintTop_toBottomOf="@id/erableButton" />
+
+            <ImageButton
+                android:id="@+id/cheneButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/chene"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ifButton"
+                app:layout_constraintTop_toBottomOf="@id/erableButton" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
