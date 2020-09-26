@@ -7,6 +7,7 @@
     <string name="empty"/>
 
     <string name="bonta">Bonta</string>
+    <string name="bonta_fort">Bonta (Fortification de Bonta)</string>
 
     <string name="brakmar">Brâkmar</string>
     <string name="brakmar_bordure">Brâkmar (Bordure de Brâkmar)</string>
@@ -69,6 +70,8 @@
     <string name="amakna_campagne">Amakna (La campagne)</string>
     <string name="amakna_village_drago">Amakna (Village des Dragoeufs)</string>
     <string name="amakna_penin">Amakna (La péninsule des Gelées)</string>
+    <string name="amakna_foret_mal">Amakna (La forêt maléfique)</string>
+    <string name="amakna_bord">Amakna (Bord de la forêt maléfique)</string>
 
     <string name="bateau_minotoror">Bateau vers l\'île du Minotoror</string>
     <string name="bateau_wabbits">Bateau vers l\'île des Wabbits</string>
@@ -80,6 +83,8 @@
     <string name="cania_corbac">Plaine de Cania (Pénates du Corbac)</string>
     <string name="cania_rocheuse">Plaine de Cania (Plaines Rocheuse)</string>
     <string name="cania_baie">Plaine de Cania (Baie de Cania)</string>
+    <string name="cania_champ">Plaine de Cania (Les champs de Cania)</string>
+    <string name="cania_bois">Plaine de Cania (Bois de Litnea)</string>
 
     <string name="oto_village">Île d\'Otomaï (Le village côtier)</string>
     <string name="oto_plage">Ile d\'Otomaï (Plage de Corail)</string>

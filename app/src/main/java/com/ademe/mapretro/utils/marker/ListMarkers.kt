@@ -4,8 +4,11 @@ import com.ademe.mapretro.utils.classes.*
 import com.ademe.mapretro.utils.divers.*
 import com.ademe.mapretro.utils.places.*
 import com.ademe.mapretro.utils.resource.abra.resourceAbra
+import com.ademe.mapretro.utils.resource.amakna.*
 import com.ademe.mapretro.utils.resource.astrub.*
+import com.ademe.mapretro.utils.resource.bonta.resourceBonta
 import com.ademe.mapretro.utils.resource.brakmar.resourceBrakmar
+import com.ademe.mapretro.utils.resource.cania.*
 import com.ademe.mapretro.utils.resource.koalak.resourceKoalak
 import com.ademe.mapretro.utils.resource.nowell.resourceNowell
 import com.ademe.mapretro.utils.resource.pandala.resourcePandalaAir
@@ -13,6 +16,7 @@ import com.ademe.mapretro.utils.resource.pandala.resourcePandalaEau
 import com.ademe.mapretro.utils.resource.pandala.resourcePandalaFeu
 import com.ademe.mapretro.utils.resource.pandala.resourcePandalaTerre
 import com.ademe.mapretro.utils.resource.sidimote.resourceSidimote
+import com.ademe.mapretro.utils.resource.sufokia.resourceSufokia
 import com.ademe.mapretro.utils.resource.tainela.resourceTainela
 import com.ademe.mapretro.utils.resource.wabbit.resourceWabbits
 
@@ -127,22 +131,34 @@ val markerResources = concatenate(
     resourceNowell,
     resourceTainela,
     resourceSidimote,
-    resourceWabbits
+    resourceWabbits,
+    resourceBonta,
+    resourceCaniaMassif,
+    resourceCaniaChamp,
+    resourceCaniaPlaine,
+    resourceCania,
+    resourceCaniaCimetiere,
+    resourceCaniaBois,
+    resourceAmaknaPorco,
+    resourceAmaknaDrago,
+    resourceAmaknaForetMal,
+    resourceSufokia,
+    resourceAmaknaMontagne,
+    resourceAmaknaPenin,
+    resourceAmaknaScara,
+    resourceAmaknaBord,
+    resourceAmaknaBandit,
+    resourceAmaknaCim
 )
 
-var listTypeMarkerRes = mutableListOf(
-    MarkerTypeRes.BOIS,
-    MarkerTypeRes.MINERAI,
-    MarkerTypeRes.FLEURS,
-    MarkerTypeRes.POISSON,
-    MarkerTypeRes.CEREAL
-)
+
 var listTypeMarkerResource = mutableListOf(
     MarkerTypeResource.PANDOUILLE,
     MarkerTypeResource.ORCHIDEE,
     MarkerTypeResource.TREFLE,
     MarkerTypeResource.MENTHE,
     MarkerTypeResource.EDELWEISS,
+
     MarkerTypeResource.POISS_GEANT_MER,
     MarkerTypeResource.POISS_GEANT_RIV,
     MarkerTypeResource.POISS_GROS_MER,
@@ -151,6 +167,7 @@ var listTypeMarkerResource = mutableListOf(
     MarkerTypeResource.POISS_RIV,
     MarkerTypeResource.POISS_PETIT_MER,
     MarkerTypeResource.POISS_PETIT_RIV,
+
     MarkerTypeResource.RIZ,
     MarkerTypeResource.ORGE,
     MarkerTypeResource.MALT,
@@ -160,6 +177,7 @@ var listTypeMarkerResource = mutableListOf(
     MarkerTypeResource.AVOINE,
     MarkerTypeResource.BLE,
     MarkerTypeResource.SEIGLE,
+
     MarkerTypeResource.MANGANESE,
     MarkerTypeResource.PIERRE_CUIVREE,
     MarkerTypeResource.ARGENT,
@@ -171,6 +189,7 @@ var listTypeMarkerResource = mutableListOf(
     MarkerTypeResource.BRONZE,
     MarkerTypeResource.PIERRE_BAUXITE,
     MarkerTypeResource.OR,
+
     MarkerTypeResource.KALIPTUS,
     MarkerTypeResource.BOMBU,
     MarkerTypeResource.ERABLE,
@@ -187,4 +206,70 @@ var listTypeMarkerResource = mutableListOf(
     MarkerTypeResource.EBENE,
     MarkerTypeResource.IF,
     MarkerTypeResource.CHENE
+)
+
+
+
+val listTypeMarkerBois = mutableListOf(
+    MarkerTypeResource.KALIPTUS,
+    MarkerTypeResource.BOMBU,
+    MarkerTypeResource.ERABLE,
+    MarkerTypeResource.FRENE,
+    MarkerTypeResource.BAMBOU_SACRE,
+    MarkerTypeResource.BAMBOU_SOMBRE,
+    MarkerTypeResource.BAMBOU,
+    MarkerTypeResource.OLIVIOLET,
+    MarkerTypeResource.MERISIER,
+    MarkerTypeResource.NOYER,
+    MarkerTypeResource.CHATAIGNIER,
+    MarkerTypeResource.CHARME,
+    MarkerTypeResource.ORME,
+    MarkerTypeResource.EBENE,
+    MarkerTypeResource.IF,
+    MarkerTypeResource.CHENE
+)
+
+val listTypeMarkerMinerais = mutableListOf(
+    MarkerTypeResource.MANGANESE,
+    MarkerTypeResource.PIERRE_CUIVREE,
+    MarkerTypeResource.ARGENT,
+    MarkerTypeResource.SILICATE,
+    MarkerTypeResource.ETAIN,
+    MarkerTypeResource.FER,
+    MarkerTypeResource.DOLOMITE,
+    MarkerTypeResource.PIERRE_KOBALTE,
+    MarkerTypeResource.BRONZE,
+    MarkerTypeResource.PIERRE_BAUXITE,
+    MarkerTypeResource.OR
+)
+
+val listTypeMarkerCereal = mutableListOf(
+    MarkerTypeResource.RIZ,
+    MarkerTypeResource.ORGE,
+    MarkerTypeResource.MALT,
+    MarkerTypeResource.LIN,
+    MarkerTypeResource.CHANVRE,
+    MarkerTypeResource.HOUBLON,
+    MarkerTypeResource.AVOINE,
+    MarkerTypeResource.BLE,
+    MarkerTypeResource.SEIGLE
+)
+
+val listTypeMarkerPoisson = mutableListOf(
+    MarkerTypeResource.POISS_GEANT_MER,
+    MarkerTypeResource.POISS_GEANT_RIV,
+    MarkerTypeResource.POISS_GROS_MER,
+    MarkerTypeResource.POISS_GROS_RIV,
+    MarkerTypeResource.POISS_MER,
+    MarkerTypeResource.POISS_RIV,
+    MarkerTypeResource.POISS_PETIT_MER,
+    MarkerTypeResource.POISS_PETIT_RIV
+)
+
+val listTypeMarkerFleur = mutableListOf(
+    MarkerTypeResource.PANDOUILLE,
+    MarkerTypeResource.ORCHIDEE,
+    MarkerTypeResource.TREFLE,
+    MarkerTypeResource.MENTHE,
+    MarkerTypeResource.EDELWEISS
 )

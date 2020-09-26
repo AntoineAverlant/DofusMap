@@ -172,15 +172,18 @@ class MenuSelection(context: Context, attributeSet: AttributeSet) :
 
     private fun calculateListRes(markerTypeRes: MarkerTypeRes): List<MarkerRes> {
         return tmpMarkerRes.filter {
-            it.type.contains(markerTypeRes) && it.type.intersect(
-                listTypeMarkerRes.asIterable()
+            it.type.contains(markerTypeRes) && it.hashMapTypeQte.keys.intersect(
+                listTypeMarkerResource.asIterable()
             ).isEmpty()
         }
     }
 
-    private fun calculateListResource(markerTypeRes: MarkerTypeResource): List<MarkerRes> {
+    private fun calculateListResource(
+        markerTypeRes: MarkerTypeRes,
+        markerTypeResource: MarkerTypeResource
+    ): List<MarkerRes> {
         return markerResources.filter {
-            it.hashMapTypeQte.keys.contains(markerTypeRes) && it.hashMapTypeQte.keys.intersect(
+            it.hashMapTypeQte.keys.contains(markerTypeResource) && it.hashMapTypeQte.keys.intersect(
                 listTypeMarkerResource.asIterable()
             ).isEmpty()
         }
@@ -198,12 +201,25 @@ class MenuSelection(context: Context, attributeSet: AttributeSet) :
             fragment.selectAll()
         } else {
             isEnable = isEnabled.not()
-            if (listTypeMarkerRes.contains(markerTypeRes)) {
-                listTypeMarkerRes.remove(markerTypeRes)
+
+            if(isEnable) {
                 onResMenuClick(calculateListRes(markerTypeRes), isEnable)
+                when (markerTypeRes) {
+                    MarkerTypeRes.MINERAI -> listTypeMarkerResource.addAll(listTypeMarkerMinerais)
+                    MarkerTypeRes.CEREAL -> listTypeMarkerResource.addAll(listTypeMarkerCereal)
+                    MarkerTypeRes.BOIS -> listTypeMarkerResource.addAll(listTypeMarkerBois)
+                    MarkerTypeRes.FLEURS -> listTypeMarkerResource.addAll(listTypeMarkerFleur)
+                    MarkerTypeRes.POISSON -> listTypeMarkerResource.addAll(listTypeMarkerPoisson)
+                }
             } else {
+                when (markerTypeRes) {
+                    MarkerTypeRes.MINERAI -> listTypeMarkerResource.removeAll(listTypeMarkerMinerais)
+                    MarkerTypeRes.CEREAL -> listTypeMarkerResource.removeAll(listTypeMarkerCereal)
+                    MarkerTypeRes.BOIS -> listTypeMarkerResource.removeAll(listTypeMarkerBois)
+                    MarkerTypeRes.FLEURS -> listTypeMarkerResource.removeAll(listTypeMarkerFleur)
+                    MarkerTypeRes.POISSON -> listTypeMarkerResource.removeAll(listTypeMarkerPoisson)
+                }
                 onResMenuClick(calculateListRes(markerTypeRes), isEnable)
-                listTypeMarkerRes.add(markerTypeRes)
             }
         }
         return isEnable
@@ -215,14 +231,33 @@ class MenuSelection(context: Context, attributeSet: AttributeSet) :
         enabled: Boolean
     ) {
         val list = if (enabled) {
-            val list = calculateListResource(markerTypeResource)
+            val list = calculateListResource(markerTypeRes, markerTypeResource)
             listTypeMarkerResource.add(markerTypeResource)
             tmpMarkerRes.addAll(list)
+
+            when (markerTypeRes) {
+                MarkerTypeRes.MINERAI -> listTypeMarkerMinerais.add(markerTypeResource)
+                MarkerTypeRes.CEREAL -> listTypeMarkerCereal.add(markerTypeResource)
+                MarkerTypeRes.BOIS -> listTypeMarkerBois.add(markerTypeResource)
+                MarkerTypeRes.FLEURS -> listTypeMarkerFleur.add(markerTypeResource)
+                MarkerTypeRes.POISSON -> listTypeMarkerPoisson.add(markerTypeResource)
+            }
+
             list
         } else {
             listTypeMarkerResource.remove(markerTypeResource)
-            val list = calculateListResource(markerTypeResource)
+
+            when (markerTypeRes) {
+                MarkerTypeRes.MINERAI -> listTypeMarkerMinerais.remove(markerTypeResource)
+                MarkerTypeRes.CEREAL -> listTypeMarkerCereal.remove(markerTypeResource)
+                MarkerTypeRes.BOIS -> listTypeMarkerBois.remove(markerTypeResource)
+                MarkerTypeRes.FLEURS -> listTypeMarkerFleur.remove(markerTypeResource)
+                MarkerTypeRes.POISSON -> listTypeMarkerPoisson.remove(markerTypeResource)
+            }
+
+            val list = calculateListResource(markerTypeRes, markerTypeResource)
             tmpMarkerRes.removeAll(list)
+
             list
         }
         val isActivate = when (markerTypeRes) {

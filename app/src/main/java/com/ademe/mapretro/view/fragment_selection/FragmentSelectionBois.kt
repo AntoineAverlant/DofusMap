@@ -64,7 +64,6 @@ class FragmentSelectionBois(private var listener: SelectionListener) : BaseFragm
         setImageButton(charmeActivated, charmeButton)
 
 
-
         kaliptusButton.setOnClickListener {
             kaliptusActivated =
                 select(kaliptusActivated, kaliptusButton, MarkerTypeResource.KALIPTUS)
