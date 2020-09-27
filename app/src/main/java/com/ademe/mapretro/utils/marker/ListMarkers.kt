@@ -24,6 +24,7 @@ val markerDonjons = concatenate(markerDonjon)
 val markerZaaps = concatenate(markerZaap)
 val markerMines = concatenate(markerMine)
 val markerEmotes = concatenate(markerEmote)
+val markerEgouts = concatenate(markerEgout)
 
 val markerAtelierHdv = concatenate(
     markerAtelierBouclier,
@@ -72,7 +73,6 @@ val markerDivers = concatenate(
     markerChanil,
     markerDojo,
     markerEglise,
-    markerEgouts,
     markerEnclos,
     markerGuilde,
     markerHotelMetier,
@@ -112,7 +112,7 @@ val markerClasses = concatenate(
     markerStatuePanda
 )
 
-val markerLieuMenu = concatenate(markerClasses, markerDivers, markerAtelierHdv, markerEmotes, markerMines, markerZaaps, markerDonjons)
+val markerLieuMenu = concatenate(markerClasses, markerDivers, markerAtelierHdv, markerEmotes, markerMines, markerZaaps, markerDonjons, markerEgouts)
 
 val markerResources = concatenate(
     resourceAbra,
@@ -148,7 +148,23 @@ val markerResources = concatenate(
     resourceAmaknaScara,
     resourceAmaknaBord,
     resourceAmaknaBandit,
-    resourceAmaknaCim
+    resourceAmaknaCim,
+    resourceAmaknaForet,
+    resourceAmaknaBouftou,
+    resourceAmaknaClaire,
+    resourceAmaknaAsse,
+    resourceAmaknaBoos,
+    resourceAmaknaChateau,
+    resourceAmaknaKawaii,
+    resourceAmaknaMadre,
+    resourceAmaknaChamp,
+    resourceAmaknaMontagneBasse,
+    resourceAmaknaMilli,
+    resourceAmaknaChemin,
+    resourceAmaknaBwork,
+    resourceAmaknaOree,
+    resourceAmaknaCampagne,
+    resourceAmaknaVillage
 )
 
 

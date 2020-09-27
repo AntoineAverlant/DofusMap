@@ -72,6 +72,12 @@
     <string name="amakna_penin">Amakna (La péninsule des Gelées)</string>
     <string name="amakna_foret_mal">Amakna (La forêt maléfique)</string>
     <string name="amakna_bord">Amakna (Bord de la forêt maléfique)</string>
+    <string name="amakna_bouftou">Amakna (Le coin des Bouftous)</string>
+    <string name="amakna_asse">Amakna (Côte d\'Asse)</string>
+    <string name="amakna_boos">Amakna (Le coin des Boos)</string>
+    <string name="amakna_fer">Amakna (Le chemin de fer abandonné)</string>
+    <string name="amakna_basse">Amakna (Montagne basse des Craqueleurs)</string>
+    <string name="amakna_bwork">Amakna (Campement des Bworks)</string>
 
     <string name="bateau_minotoror">Bateau vers l\'île du Minotoror</string>
     <string name="bateau_wabbits">Bateau vers l\'île des Wabbits</string>

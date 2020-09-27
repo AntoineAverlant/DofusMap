@@ -4,7 +4,7 @@ import com.ademe.mapretro.R
 import com.ademe.mapretro.utils.marker.MarkerLieu
 import com.ademe.mapretro.utils.marker.MarkerType
 
-val markerEgouts = listOf(
+val markerEgout = listOf(
     MarkerLieu(
         R.string.egout,
         R.string.brakmar,

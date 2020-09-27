@@ -16,6 +16,7 @@ class FragmentSelectionLieu(private var listener: SelectionListener) : BaseFragm
 
     private var zaapActivated = true
     private var diversActivated = true
+    private var egoutActivated = true
     private var minesActivated = true
     private var atelierActivated = true
     private var classeActivated = true
@@ -38,6 +39,7 @@ class FragmentSelectionLieu(private var listener: SelectionListener) : BaseFragm
     private fun setView() {
         setImageButton(zaapActivated, zaapButton)
         setImageButton(diversActivated, diversButton)
+        setImageButton(egoutActivated, egoutsButton)
         setImageButton(minesActivated, mineButton)
         setImageButton(atelierActivated, atelierButton)
         setImageButton(classeActivated, classeButton)
@@ -50,6 +52,10 @@ class FragmentSelectionLieu(private var listener: SelectionListener) : BaseFragm
         }
         diversButton.setOnClickListener {
             diversActivated = select(diversActivated, diversButton, markerDivers)
+            checkAllSelected()
+        }
+        egoutsButton.setOnClickListener {
+            egoutActivated = select(egoutActivated, egoutsButton, markerEgouts)
             checkAllSelected()
         }
         mineButton.setOnClickListener {
@@ -91,7 +97,7 @@ class FragmentSelectionLieu(private var listener: SelectionListener) : BaseFragm
 
     private fun checkAllSelected() {
         isAllSelected =
-            zaapActivated && diversActivated && minesActivated && atelierActivated && classeActivated && emoteActivated && donjonActivated
+            zaapActivated && diversActivated && minesActivated && atelierActivated && classeActivated && emoteActivated && donjonActivated && egoutActivated
     }
 
     private fun setSelectAll(boolean: Boolean) {
@@ -100,6 +106,9 @@ class FragmentSelectionLieu(private var listener: SelectionListener) : BaseFragm
 
         if (diversActivated == boolean)
             diversActivated = select(boolean, diversButton, markerDivers)
+
+        if (egoutActivated == boolean)
+            egoutActivated = select(boolean, egoutsButton, markerEgouts)
 
         if (minesActivated == boolean)
             minesActivated = select(boolean, mineButton, markerMines)
