@@ -18,7 +18,7 @@ La plupart des images utilisées pour cette application sont l'oeuvre et la prop
 
 Cette application est compatible avec les versions d'Android au dessus d'Oreo (8.0.0).
 
-[Téléchargement du fichier APK](./readme/dofus-map.apk)
+[Téléchargement du fichier APK](/readme/dofus-map.apk)
 
 > Vérifier l'option d'installation des sources inconnus si vous télécharger directement depuis votre téléphone -> [tuto](https://www.frandroid.com/comment-faire/tutoriaux/184151_comment-installer-un-fichier-apk-sur-son-terminal-android)
 
@@ -28,10 +28,8 @@ Une fois le fichier sur votre téléphone, lancer l'apk depuis votre gestionnair
 
 ## Screenshots
 
-<img src="./readme/screen1.jpg" width="250">
-<img src="./readme/screen2.jpg" width="250">
-<img src="./readme/screen3.jpg" width="250">
-<img src="./readme/screen4.jpg" width="250">
+<img src="./readme/screen1.jpg" width="250"><img src="./readme/screen2.jpg" width="250"><img src="./readme/screen3.jpg" width="250"><img src="./readme/screen4.jpg" width="250">
+
 </br></br>
 
 ## Contribution
