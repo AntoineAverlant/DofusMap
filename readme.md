@@ -12,7 +12,7 @@ Cet outil permet de visualiser différentes localisation de lieux/ ressources du
 
 La plupart des images utilisées pour cette application sont l'oeuvre et la propriété d'[Ankama Studio](https://www.ankama.com/fr).
 
-Les marqueurs d'emplacements sont basés sur cette [carte](http://www.dofus.tools/?page=carteOld) (2007), il y a peut être des différences avec la version du jeux d'aujourd'hui.
+Les marqueurs d'emplacements sont basés sur cette [carte](http://www.dofus.tools/?page=carteOld) (2007), il y a peut être des différences avec la version du jeu d'aujourd'hui.
 
 </br>
 
