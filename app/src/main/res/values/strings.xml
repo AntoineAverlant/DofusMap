@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">MapRetro</string>
-    <string name="title_activity_maps">MapRetro</string>
+    <string name="app_name">Dofus Map</string>
 
     <string name="zone_art">Zone artique (L\'île de Nowel)</string>
 
